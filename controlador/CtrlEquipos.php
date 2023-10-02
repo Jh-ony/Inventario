@@ -22,9 +22,11 @@ class CtrlEquipos extends Controlador {
         //$this->mostrar('Equipos/mostrar.php',$datos);
     }
     public function nuevo(){
-        
-
-        $this->mostrar('Equipos/formulario.php');
+        $home= $this->mostrar('Equipos/formulario.php',null,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function editar(){
         $id = $_GET['id'];
@@ -35,7 +37,12 @@ class CtrlEquipos extends Controlador {
             'obj'=>$data['data'][0],
             
         ];
-        $this->mostrar('Equipos/formulario.php',$datos);
+        $home=$this->mostrar('Equipos/formulario.php',$datos,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
     }
     public function guardar(){
         $id=$_POST['id'];

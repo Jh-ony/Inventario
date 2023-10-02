@@ -11,10 +11,20 @@ class CtrlFactorForma extends Controlador {
             'titulo'=>'Factores de Forma',
             'data'=>$data['data']
         ];
-        $this->mostrar('factoresForma/mostrar.php',$datos);
+        $home=$this->mostrar('factoresForma/mostrar.php',$datos,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
     }
     public function nuevo(){
-        $this->mostrar('factoresForma/formulario.php');
+        $home=$this->mostrar('factoresForma/formulario.php',null,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
     }
 
     public function editar(){
@@ -24,7 +34,12 @@ class CtrlFactorForma extends Controlador {
         $datos = [
             'obj'=>$data['data'][0]
         ];
-        $this->mostrar('factoresForma/formulario.php',$datos);
+        $home=$this->mostrar('factoresForma/formulario.php',$datos,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
     }
     public function guardar(){
         $id=$_POST['id'];

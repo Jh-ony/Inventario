@@ -11,10 +11,20 @@ class CtrlOficina extends Controlador {
             'titulo'=>'Oficinas',
             'data'=>$data['data']
         ];
-        $this->mostrar('oficinas/mostrar.php',$datos);
+        $home=$this->mostrar('oficinas/mostrar.php',$datos,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
     }
     public function nuevo(){
-        $this->mostrar('oficinas/formulario.php');
+        $home=$this->mostrar('oficinas/formulario.php',null,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
     }
     public function editar(){
         $id = $_GET['id'];
@@ -23,7 +33,12 @@ class CtrlOficina extends Controlador {
         $datos = [
             'obj'=>$data['data'][0]
         ];
-        $this->mostrar('oficinas/formulario.php',$datos);
+        $home=$this->mostrar('oficinas/formulario.php',$datos,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
     }
     public function guardar(){
         $id=$_POST['id'];
