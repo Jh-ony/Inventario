@@ -12,12 +12,22 @@ class CtrlSistemasOperativos extends Controlador {
             'titulo'=>'Sistema Operativo',
             'data'=>$data['data']
         ];
-        $this->mostrar('SistemasOperativos/mostrar.php',$datos);
+        $home = $this->mostrar('SistemasOperativos/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
         
 
-        $this->mostrar('SistemasOperativos/formulario.php');
+        $home = $this->mostrar('SistemasOperativos/formulario.php',null,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function editar(){
         $id = $_GET['id'];
@@ -28,7 +38,12 @@ class CtrlSistemasOperativos extends Controlador {
             'obj'=>$data['data'][0],
             
         ];
-        $this->mostrar('SistemasOperativos/formulario.php',$datos);
+        $home = $this->mostrar('SistemasOperativos/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function guardar(){
         $id=$_POST['id'];

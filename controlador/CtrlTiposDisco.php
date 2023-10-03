@@ -12,12 +12,22 @@ class CtrlTiposDisco extends Controlador {
             'titulo'=>'Tipo Disco',
             'data'=>$data['data']
         ];
-        $this->mostrar('TiposDisco/mostrar.php',$datos);
+        $home = $this->mostrar('TiposDisco/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
         
 
-        $this->mostrar('TiposDisco/formulario.php');
+        $home = $this->mostrar('TiposDisco/formulario.php',null,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function editar(){
         $id = $_GET['id'];
@@ -28,7 +38,12 @@ class CtrlTiposDisco extends Controlador {
             'obj'=>$data['data'][0],
             
         ];
-        $this->mostrar('TiposDisco/formulario.php',$datos);
+        $home = $this->mostrar('TiposDisco/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function guardar(){
         $id=$_POST['id'];

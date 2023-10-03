@@ -24,7 +24,8 @@ $titulo = ($esNuevo==1)?'Nuevo Sistema Operativo':'Editando Sistema Operativo';
     <br>
     Sistema Operativo:
     <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
- 
+ <br>
+ <br>
     <input class="form-control" type="submit" value="Guardar">
 
     </form>

@@ -12,12 +12,21 @@ class CtrlProgramaEstudio extends Controlador {
             'titulo'=>'Programa de Estudios',
             'data'=>$data['data']
         ];
-        $this->mostrar('programaEstudios/mostrar.php',$datos);
+        $home = $this->mostrar('programaEstudios/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
         
+        $home = $this->mostrar('programaEstudios/formulario.php',null,true);
 
-        $this->mostrar('programaEstudios/formulario.php');
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function editar(){
         $id = $_GET['id'];
@@ -28,7 +37,12 @@ class CtrlProgramaEstudio extends Controlador {
             'obj'=>$data['data'][0],
             
         ];
-        $this->mostrar('programaEstudios/formulario.php',$datos);
+        $home = $this->mostrar('programaEstudios/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function guardar(){
         $id=$_POST['id'];

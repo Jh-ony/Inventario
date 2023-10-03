@@ -12,12 +12,22 @@ class CtrlModelos extends Controlador {
             'titulo'=>'Modelos',
             'data'=>$data['data']
         ];
-        $this->mostrar('Modelos/mostrar.php',$datos);
+        $home = $this->mostrar('Modelos/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
         
 
-        $this->mostrar('Modelos/formulario.php');
+        $home = $this->mostrar('Modelos/formulario.php',null,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function editar(){
         $id = $_GET['id'];
@@ -28,7 +38,12 @@ class CtrlModelos extends Controlador {
             'obj'=>$data['data'][0],
             
         ];
-        $this->mostrar('Modelos/formulario.php',$datos);
+        $home = $this->mostrar('Modelos/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function guardar(){
         $id=$_POST['id'];

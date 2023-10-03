@@ -24,6 +24,7 @@ $titulo = ($esNuevo==1)?'Nueva Oficina':'Editar Oficina';
     Oficina:
     <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
     <br>
+    <br>
     <input class="form-control" type="submit" value="Guardar">
 
     </form>

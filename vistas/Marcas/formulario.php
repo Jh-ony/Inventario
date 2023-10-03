@@ -24,7 +24,9 @@ $titulo = ($esNuevo==1)?'Nueva Marca':'Editando Marca';
     <br>
     Marca:
     <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
- 
+ <br>
+ <br>
+
     <input class="form-control" type="submit" value="Guardar">
 
     </form>

@@ -28,6 +28,7 @@ $titulo = ($esNuevo==1)?'Nuevo Programa de Estudios':'Editando Programa de Estud
     Logo:
     <input class="form-control" type="text" name="logo" value="<?=$logo?>">
     <br>
+    <br>
     <input class="form-control" type="submit" value="Guardar">
 
     </form>

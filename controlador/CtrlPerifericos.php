@@ -81,7 +81,7 @@ class CtrlPerifericos extends Controlador {
 
         $obj = new Perifericos ($id, $idEstado,
                         $nombre, $descripcion
-                            , $foto, $observaciones
+                            , $foto, $observaciones, $esNuevo
 
                         );
 

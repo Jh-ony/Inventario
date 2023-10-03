@@ -18,11 +18,11 @@ $titulo = ($esNuevo==1)?'Nuevo Tipo Procesadores':'Editando Tipo Procesadores';
     <h1><?=$titulo?></h1>
     <form action="?ctrl=CtrlTiposProcesadores&accion=guardar" method="post">
 
-    id:
+    ID:
     <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
     <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
     <br>
-    Tipo de Disco:
+    Tipo de Procesador:
     <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
  
     <input class="form-control" type="submit" value="Guardar">

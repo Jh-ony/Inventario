@@ -67,6 +67,7 @@ $titulo = ($esNuevo==1)?'Nuevo Equipo':'Editando Equipo';
     Dimensiones:
     <input class="form-control" type="text" name="dimensiones" value="<?=$dimensiones?>">
     <br>
+    <br>
     
     <input class="form-control" type="submit" value="Guardar">
 

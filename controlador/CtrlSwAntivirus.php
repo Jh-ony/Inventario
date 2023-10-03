@@ -12,6 +12,66 @@ class CtrlSwAntivirus extends Controlador {
             'titulo'=>'Tipo Antivirus',
             'data'=>$data['data']
         ];
+        $home = $this->mostrar('SwAntivirus/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
+    }
+    public function nuevo(){
+
+        $home= $this->mostrar('SwAntivirus/formulario.php',null,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
+    }
+    public function editar(){
+        $id = $_GET['id'];
+        $obj = new SwAntivirus($id);
+        $data = $obj->getRegistro();
+        $datos = [
+            'obj'=>$data['data'][0]
+        ];
+        $home=$this->mostrar('SwAntivirus/formulario.php',$datos,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
+    }
+    public function guardar(){
+        $id=$_POST['id'];
+        $nombre=$_POST['nombre'];
+        $esNuevo=$_POST['esNuevo'];
+
+        $obj = new SwAntivirus($id,$nombre);
+
+        switch ($esNuevo) {
+            case '0': # Editar
+                $respuesta = $obj->actualizar();
+                break;
+            
+            default:    #Nuevo
+                $respuesta = $obj->guardar();
+                break;
+        }
+
+        $this->index();
+
+    }
+    public function eliminar(){
+        $id = $_GET['id'];
+        $obj = new SwAntivirus($id);
+        $respuesta = $obj->eliminar();
+        $this->index();
+
+    }
+}
+        /*
         $this->mostrar('SwAntivirus/mostrar.php',$datos);
     }
     public function nuevo(){
@@ -60,3 +120,6 @@ class CtrlSwAntivirus extends Controlador {
 
     }
 }
+
+*/
+?>

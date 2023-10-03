@@ -12,7 +12,12 @@ class CtrlArea extends Controlador {
             'titulo'=>'Areas',
             'data'=>$data['data']
         ];
-        $this->mostrar('areas/mostrar.php',$datos);
+        $home = $this->mostrar('areas/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
         $obj = new Oficina;
@@ -21,7 +26,12 @@ class CtrlArea extends Controlador {
             'oficinas'=>$data['data']
         ];
 
-        $this->mostrar('areas/formulario.php',$datos);
+        $home = $this->mostrar('areas/formulario.php',null,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function editar(){
         $id = $_GET['id'];
@@ -36,7 +46,12 @@ class CtrlArea extends Controlador {
             'obj'=>$data['data'][0],
             'oficinas'=>$dataOficina['data']
         ];
-        $this->mostrar('areas/formulario.php',$datos);
+        $home = $this->mostrar('areas/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function guardar(){
         $id=$_POST['id'];

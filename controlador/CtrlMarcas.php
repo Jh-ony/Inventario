@@ -12,12 +12,22 @@ class CtrlMarcas extends Controlador {
             'titulo'=>'Marcas',
             'data'=>$data['data']
         ];
-        $this->mostrar('Marcas/mostrar.php',$datos);
+        $home = $this->mostrar('Marcas/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
         
 
-        $this->mostrar('Marcas/formulario.php');
+        $home = $this->mostrar('Marcas/formulario.php',null,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function editar(){
         $id = $_GET['id'];
@@ -28,7 +38,12 @@ class CtrlMarcas extends Controlador {
             'obj'=>$data['data'][0],
             
         ];
-        $this->mostrar('Marcas/formulario.php',$datos);
+        $home = $this->mostrar('Marcas/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function guardar(){
         $id=$_POST['id'];
