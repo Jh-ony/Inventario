@@ -17,8 +17,12 @@ class CtrlPerifericos extends Controlador {
             'titulo'=>'Perifericos',
             'datos'=>$data['data']
         ];
-    $this->mostrar('Perifericos/mostrar.php',$datos);
+        $home = $this->mostrar('Perifericos/mostrar.php',$datos,true);
 
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
 
     public function eliminar(){
@@ -49,8 +53,12 @@ class CtrlPerifericos extends Controlador {
             'estado'=>$estado['data'],
             
         ];*/
-    $this->mostrar('Perifericos/formulario.php',$datos);
-        
+        $home = $this->mostrar('Perifericos/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos); 
     }
     public function editar(){
         $id = $_GET['id'];
@@ -66,8 +74,12 @@ class CtrlPerifericos extends Controlador {
             'estados'=>$estados['data']
         ];
         
-    $this->mostrar('Perifericos/formulario.php',$datos);
-        
+        $home = $this->mostrar('Perifericos/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);  
     }
     public function guardar(){
         # echo "Guardando..";

@@ -17,7 +17,12 @@ class CtrlServidoresPublicos extends Controlador {
             'data'=>$data['data']
         ];
 
-        $this->mostrar('ServidoresPublicos/mostrar.php',$datos);
+        $home = $this->mostrar('ServidoresPublicos/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
         $obj = new Cargo;
@@ -27,9 +32,9 @@ class CtrlServidoresPublicos extends Controlador {
         $data2 = $obj2->mostrar();
         $data3 = $obj3->mostrar();
         $datos= [
-            'cargo'=>$data['data'],
-            'area'=>$data2['data'],
-            'oficina'=>$data3['data']
+            'Cargo'=>$data['data'],
+            'Area'=>$data2['data'],
+            'Oficina'=>$data3['data']
             
         ];
 
@@ -44,7 +49,12 @@ class CtrlServidoresPublicos extends Controlador {
         $datosOficina= [
             'Oficina'=>$data['data']
         ];*/
-        $this->mostrar('ServidoresPublicos/formulario.php', $datos);
+        $home = $this->mostrar('ServidoresPublicos/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
 
     }
     public function editar(){
@@ -60,7 +70,12 @@ class CtrlServidoresPublicos extends Controlador {
             'obj'=>$data['data'][0],
             'Cargo'=>$dataCargo['data']
         ];
-        $this->mostrar('ServidoresPublicos/formulario.php',$datos);
+        $home = $this->mostrar('ServidoresPublicos/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     
    /*public function nuevo_1(){
