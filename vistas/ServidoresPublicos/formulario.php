@@ -22,7 +22,7 @@ $titulo = ($esNuevo==1)?'Nuevo Servidor Publico':'Editar Servidor Publico';
     <form action="?ctrl=CtrlServidoresPublicos&accion=guardar" method="post">
 
     id:
-    <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
+    <input class="form-control" type="text" name="id" value="<?=$id?>">
     <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
     <br>
     fecha_inicio:

@@ -29,19 +29,19 @@ foreach ($data as $d) {
             <?=$d['id']?>
         </td>
         <td>
-            <?=$d['cargo']?>
+            <?=$d['idCargo']?>
         </td>
         <td>
-            <?=$d['area']?>
+            <?=$d['idArea']?>
         </td>
         <td>
-            <?=$d['oficina']?>
+            <?=$d['idOficina']?>
         </td>
         <td>
-            <?=$d['fecha inicio']?>
+            <?=$d['fecha_inicio']?>
         </td>
         <td>
-            <?=$d['fecha fin']?>
+            <?=$d['fecha_fin']?>
         </td>
         <td>
             

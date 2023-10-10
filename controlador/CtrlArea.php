@@ -24,14 +24,14 @@ class CtrlArea extends Controlador {
         $data = $obj->mostrar();
         $datos = [
             'oficinas'=>$data['data']
-        ];
+        ];  
 
-        $home = $this->mostrar('areas/formulario.php',null,true);
+        $home = $this->mostrar('areas/formulario.php',$datos, true);
 
         $datos = [
             'contenido'=>$home
         ];
-        $this->mostrar('plantilla/home.php',$datos);
+        $this->mostrar('plantilla/home.php',$datos );
     }
     public function editar(){
         $id = $_GET['id'];

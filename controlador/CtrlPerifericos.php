@@ -32,20 +32,23 @@ class CtrlPerifericos extends Controlador {
     public function nuevo(){
         # echo "Agregando..";
         $obj = new Equipos;
-        $equipo = $obj->mostrar();
+        $obj2 = new Estados;
+        $data = $obj->mostrar();
+        $data2= $obj2->mostrar();
         $datos= [
             'titulo'=>'Nuevo Periferico',
-            'equipo'=>$equipo['data'],
+            'equipo'=>$data['data'],
+            'estado'=>$data2['data'],
             
         ];
 
-        $obj = new Estados;
+        /*$obj = new Estados;
         $estado = $obj->mostrar();
         $datos= [
             'titulo'=>'Nuevo Periferico',
             'estado'=>$estado['data'],
             
-        ];
+        ];*/
     $this->mostrar('Perifericos/formulario.php',$datos);
         
     }

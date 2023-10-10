@@ -21,13 +21,19 @@ class CtrlServidoresPublicos extends Controlador {
     }
     public function nuevo(){
         $obj = new Cargo;
+        $obj2 = new Area;
+        $obj3 = new Oficina;
         $data = $obj->mostrar();
-        $datosCargo= [
-            'Cargo'=>$data['data']
+        $data2 = $obj2->mostrar();
+        $data3 = $obj3->mostrar();
+        $datos= [
+            'cargo'=>$data['data'],
+            'area'=>$data2['data'],
+            'oficina'=>$data3['data']
             
         ];
 
-        $obj = new Area;
+       /* $obj = new Area;
         $data = $obj->mostrar();
         $datosArea= [
             'Area'=>$data['data']
@@ -37,10 +43,9 @@ class CtrlServidoresPublicos extends Controlador {
         $data = $obj->mostrar();
         $datosOficina= [
             'Oficina'=>$data['data']
-        ];
-        $this->mostrar('ServidoresPublicos/formulario.php', $datosCargo);
-        $this->mostrar('ServidoresPublicos/formulario.php', $datosOficina);
-        $this->mostrar('ServidoresPublicos/formulario.php', $datosArea);
+        ];*/
+        $this->mostrar('ServidoresPublicos/formulario.php', $datos);
+
     }
     public function editar(){
         $id = $_GET['id'];

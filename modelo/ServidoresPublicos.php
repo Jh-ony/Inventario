@@ -24,7 +24,7 @@ class ServidoresPublicos extends Modelo {
 
     public function mostrar(){
 
-        $this->setTabla($this->_vista);
+        $this->setTabla($this->_tabla);
 
         return $this->getAll();
     }
