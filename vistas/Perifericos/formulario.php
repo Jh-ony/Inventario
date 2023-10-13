@@ -25,9 +25,9 @@ $titulo = ($esNuevo==1)?'Nueva Periferico':'Editando Periferico';
     <form action="?ctrl=CtrlPerifericos&accion=guardar" method="post">
 
     id:
-    <input class="form-control" type="text" name="id" value="<?=$id?>">
-    <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
-    <!--<select class="form-control" name="id">
+    <!--<input class="form-control" type="text" name="id" value="<?=$id?>">
+    <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">-->
+    <select class="form-control" name="id" value= "<?$id?>">
             <?php
             if (is_array($id))
             foreach ($equipo as $eq) {
@@ -36,7 +36,7 @@ $titulo = ($esNuevo==1)?'Nueva Periferico':'Editando Periferico';
             <option value="<?=$eq['id']?>" <?=$selected?>><?=$eq['id']?></option>
             <?php
             }
-            ?>-->
+            ?>
     </select>
     <br>
     <br>

@@ -17,7 +17,7 @@ class Area extends Modelo {
 
     public function mostrar(){
 
-        $this->setTabla($this->_tabla);
+        $this->setTabla($this->_vista);
 
         return $this->getAll();
     }

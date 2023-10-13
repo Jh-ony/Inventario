@@ -4,7 +4,7 @@
     <table class="table table-hover">
         <tr>
             <th>ID</th>
-            <th>ID Oficina</th>
+            <th>Oficina</th>
             <th>Nombre</th>
             <th>Opciones</th>
 
@@ -18,7 +18,7 @@ foreach ($data as $d) {
             <?=$d['id']?>
         </td>
         <td>
-            <?=$d['idOficina']?>
+            <?=$d['Nombre_Oficinas']?>
         </td>
         <td>
             <?=$d['nombre']?>

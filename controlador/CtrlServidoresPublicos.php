@@ -64,11 +64,16 @@ class CtrlServidoresPublicos extends Controlador {
 
         $obj = new Cargo;
         $dataCargo = $obj->mostrar();
-        
+        $obj2 = new Area;
+        $dataArea = $obj2->mostrar();
+        $obj3 = new Oficina;
+        $dataOficina = $obj3->mostrar();
         
         $datos = [
             'obj'=>$data['data'][0],
-            'Cargo'=>$dataCargo['data']
+            'Cargo'=>$dataCargo['data'],
+            'Area'=>$dataArea['data'],
+            'Oficina'=>$dataOficina['data']
         ];
         $home = $this->mostrar('ServidoresPublicos/formulario.php',$datos,true);
 
