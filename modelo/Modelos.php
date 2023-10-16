@@ -6,16 +6,19 @@ class Modelos extends Modelo {
     private $id;
     private $nombre;
     private $detalles;
+    private $idMarcas;
     private $_tabla='modelos';
-    private $_vista='v_modelo';
-    public function __construct($id=null,$nombre=null,$detalles=null){
+    private $_vista='v_modelos';
+    public function __construct($id=null,$nombre=null,$detalles=null,$idMarcas=null){
         $this->id = $id;
         $this->nombre=$nombre;
         $this->detalles=$detalles;
+        $this->idMarcas=$idMarcas;
         parent::__construct($this->_tabla);
     }
 
     public function mostrar(){
+        $this->setTabla($this->_vista);
         return $this->getAll();
     }
     public function getRegistro(){
@@ -25,6 +28,7 @@ class Modelos extends Modelo {
         $data=[
             'nombre'=>"'$this->nombre'",
             'detalles'=>"'$this->detalles'",
+            'idMarcas'=>"'$this->idMarcas'"
         ];
         return $this->insert($data);
     }
@@ -32,6 +36,7 @@ class Modelos extends Modelo {
         $data=[
             'nombre'=>"'$this->nombre'",
             'detalles'=>"'$this->detalles'",
+            'idMarcas'=>"'$this->idMarcas'"
         ];
         $wh = 'id='.$this->id;
         return $this->update($wh, $data);

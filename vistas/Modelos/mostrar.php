@@ -6,6 +6,7 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Detalles</th>
+            <th>Marca</th>
             <th>Opciones</th>
         </tr>
 <?php
@@ -21,6 +22,9 @@ foreach ($data as $d) {
         </td>
         <td>
             <?=$d['detalles']?>
+        </td>
+        <td>
+            <?=$d['Nombre_Marca']?>
         </td>
         <td>
             

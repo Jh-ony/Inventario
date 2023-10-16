@@ -2,7 +2,8 @@
 session_start();
 require_once './core/Controlador.php';
 require_once './modelo/DetallesAsignacion.php';
-
+require_once './modelo/AsignacionBienes.php';
+require_once './modelo/Equipos.php';
 
 class CtrlDetallesAsignacion extends Controlador {
     public function index(){
@@ -24,7 +25,17 @@ class CtrlDetallesAsignacion extends Controlador {
     }
     public function nuevo(){
 
-        $home= $this->mostrar('DetallesAsignacion/formulario.php',null,true);
+        $objEquipos = new Equipos;
+        $objAsignacion = new ServidoresPublicos;
+        $dataEquipos = $objEquipos->mostrar();
+        $dataAsignacion = $objAsignacion->mostrar();
+
+        $datos = [
+            'equipos'=>$dataEquipos['data'],
+            'asignacion'=>$dataAsignacion['data']
+        ]; 
+
+        $home= $this->mostrar('DetallesAsignacion/formulario.php',$datos,true);
         $datos = [
             'contenido'=>$home
         ];
@@ -35,8 +46,15 @@ class CtrlDetallesAsignacion extends Controlador {
         $id = $_GET['id'];
         $obj = new DetallesAsignacion($id);
         $data = $obj->getRegistro();
+        $objEquipos = new Equipos;
+        $objAsignacion = new ServidoresPublicos;
+        $dataEquipos = $objEquipos->mostrar();
+        $dataAsignacion = $objAsignacion->mostrar();
+
         $datos = [
-            'obj'=>$data['data'][0]
+            'obj'=>$data['data'][0],
+            'equipos'=>$dataEquipos['data'],
+            'asignacion'=>$dataAsignacion['data']
         ];
         $home=$this->mostrar('DetallesAsignacion/formulario.php',$datos,true);
         $datos = [

@@ -2,6 +2,7 @@
 session_start();
 require_once './core/Controlador.php';
 require_once './modelo/Modelos.php';
+require_once './modelo/Marcas.php';
 
 
 class CtrlModelos extends Controlador {
@@ -21,9 +22,14 @@ class CtrlModelos extends Controlador {
         $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
-        
+        $objMarcas= new Marcas();
+        $dataMarcas = $objMarcas ->mostrar();
+        $datos =[
+            'marcas'=>$dataMarcas['data']
+        ];
 
-        $home = $this->mostrar('Modelos/formulario.php',null,true);
+
+        $home = $this->mostrar('Modelos/formulario.php',$datos,true);
 
         $datos = [
             'contenido'=>$home
@@ -34,9 +40,11 @@ class CtrlModelos extends Controlador {
         $id = $_GET['id'];
         $obj = new Modelos($id);
         $data = $obj->getRegistro();
-        
+        $objMarcas= new Marcas();
+        $dataMarcas = $objMarcas ->mostrar();
         $datos = [
             'obj'=>$data['data'][0],
+            'marcas'=>$dataMarcas['data']
             
         ];
         $home = $this->mostrar('Modelos/formulario.php',$datos,true);
@@ -50,11 +58,12 @@ class CtrlModelos extends Controlador {
         $id=$_POST['id'];
         $nombre=$_POST['nombre'];
         $detalles=$_POST['detalles'];
+        $idMarcas=$_POST['idMarcas'];
     
 
         $esNuevo=$_POST['esNuevo'];
 
-        $obj = new Modelos($id,$nombre,$detalles);
+        $obj = new Modelos($id,$nombre,$detalles,$idMarcas);
 
         switch ($esNuevo) {
             case '0': # Editar

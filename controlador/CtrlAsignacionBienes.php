@@ -3,6 +3,8 @@ session_start();
 require_once './core/Controlador.php';
 require_once './modelo/AsignacionBienes.php';
 require_once './modelo/Estados.php';
+require_once './modelo/ServidoresPublicos.php';
+require_once './modelo/Persona.php';
 
 class CtrlAsignacionBienes extends Controlador {
     public function index(){
@@ -12,6 +14,7 @@ class CtrlAsignacionBienes extends Controlador {
         $datos = [
             'titulo'=>'AsignacionBienes',
             'data'=>$data['data']
+            
         ];
 
         $home = $this->mostrar('AsignacionBienes/mostrar.php',$datos,true);
@@ -23,8 +26,18 @@ class CtrlAsignacionBienes extends Controlador {
 
     }
     public function nuevo(){
-
-        $home= $this->mostrar('AsignacionBienes/formulario.php',null,true);
+        $objEstados = new Estados;
+        $objSePulbicos = new ServidoresPublicos;
+        $objPersona = new Persona;
+        $dataEstados = $objEstados->mostrar();
+        $dataSePublicos = $objSePulbicos->mostrar();
+        $dataPersona = $objPersona->mostrar();
+        $datos = [
+            'estados'=>$dataEstados['data'],
+            'servidoresPublicos'=>$dataSePublicos['data'],
+            'personas' =>$dataPersona['data']
+        ];  
+        $home= $this->mostrar('AsignacionBienes/formulario.php',$datos,true);
         $datos = [
             'contenido'=>$home
         ];
@@ -35,9 +48,20 @@ class CtrlAsignacionBienes extends Controlador {
         $id = $_GET['id'];
         $obj = new AsignacionBienes($id);
         $data = $obj->getRegistro();
+
+        $objEstados = new Estados;
+        $objSePulbicos = new ServidoresPublicos;
+        $dataEstados = $objEstados->mostrar();
+        $dataSePublicos = $objSePulbicos->mostrar();
+        $dataPersona = $objPersona->mostrar();
+        
         $datos = [
-            'obj'=>$data['data'][0]
+            'obj'=>$data['data'][0],
+            'estados'=>$dataEstados['data'],
+            'servidoresPublicos'=>$dataSePublicos['data'],
+            'personas' =>$dataPersona['data']
         ];
+
         $home=$this->mostrar('AsignacionBienes/formulario.php',$datos,true);
         $datos = [
             'contenido'=>$home

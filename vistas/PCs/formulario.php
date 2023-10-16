@@ -1,18 +1,22 @@
 <?php
 $id = isset($obj['$id'])?$obj['$id']:'';
-$nombresPC = isset($obj['$nombresPC'])?$obj['$nombresPC']:'';
-$usuarioPC = isset($obj['$usuarioPC'])?$obj['$usuarioPC']:'';
-$clavePC = isset($obj['$clavePC'])?$obj['$clavePC']:'';
-$detallesTipoProcesador = isset($obj['$detallesTipoProcesador'])?$obj['$detallesTipoProcesador']:'';
+$idTipoProcesador = isset($obj['$idTipoProcesador'])?$obj['$idTipoProcesador']:'';
 $detallesSO = isset($obj['$detallesSO'])?$obj['$detallesSO']:'';
+$idSO = isset($obj['$idSO'])?$obj['$idSO']:'';
+$detallesTipoProcesador = isset($obj['$detallesTipoProcesador'])?$obj['$detallesTipoProcesador']:'';
+$idEstado = isset($obj['$idEstado'])?$obj['$idEstado']:'';
+$idFactorForma = isset($obj['$idFactorForma'])?$obj['$idFactorForma']:'';
 $detallesFactorForma = isset($obj['$detallesFactorForma'])?$obj['$detallesFactorForma']:'';
 $observaciones = isset($obj['$observaciones'])?$obj['$observaciones']:'';
-$direccionesIP = isset($obj['$direccionesIP'])?$obj['$direccionesIP']:'';
+$direccionIP = isset($obj['$direccionIP'])?$obj['$direccionIP']:'';
 $mascaraRed = isset($obj['$mascaraRed'])?$obj['$mascaraRed']:'';
 $PuertaEnlace = isset($obj['$PuertaEnlace'])?$obj['$PuertaEnlace']:'';
 $DNS1 = isset($obj['$DNS1'])?$obj['$DNS1']:'';
 $DNS2 = isset($obj['$DNS2'])?$obj['$DNS2']:'';
 $numeroSerie = isset($obj['$numeroSerie'])?$obj['$numeroSerie']:'';
+$nombresPC = isset($obj['$nombresPC'])?$obj['$nombresPC']:'';
+$usuarioPC = isset($obj['$usuarioPC'])?$obj['$usuarioPC']:'';
+$clavePC = isset($obj['$clavePC'])?$obj['$clavePC']:'';
 $foto = isset($obj['$foto'])?$obj['$foto']:'';
 
 
@@ -32,65 +36,118 @@ $titulo = ($esNuevo==1)?'Nueva PCs':'Editar PCs';
     <h1><?=$titulo?></h1>
     <form action="?ctrl=CtrlPCs&accion=guardar" method="post">
 
-    <h4>ID</h4>
+    ID:
     <input class="form-control" type="text" name="id" value="<?=$id?>">
     <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
     
     <br>
-
-    <h4>Nombre de PC</h4>
+    Nombre de PC:
     <input class="form-control" type="text" name="nombrePC" value="<?=$nombresPC?>">
     <br>
   
-    <h4>Usuario</h4>
+    Nombre de Usuario:
     <input class="form-control" type="text" name="usuarioPC" value="<?=$usuarioPC?>">
     <br>
- 
-    <h4>Clave</h4>
+
+    Clave:
     <input class="form-control" type="text" name="clavePC" value="<?=$clavePC?>">
     <br>
 
-    <h4>Detalles de Procesador</h4>
+    Tipo de Procesador:
+    <select class="form-control" name="idTipoProcesador">
+            <?php
+            if (is_array($tiposProcesadores))
+            foreach ($tiposProcesadores as $tP) {
+                $selected = ($tP['id']==$idTipoProcesador)?'selected':'';
+            ?>
+            <option value="<?=$tP['id']?>" <?=$selected?>><?=$tP['nombre']?></option>
+            <?php
+            }
+            ?>
+    </select>
+    <br>
+
+    Detalles de Procesador:
     <input class="form-control" type="text" name="detallesTipoProcesador" value="<?=$detallesTipoProcesador?>">
     <br>
 
-    <h4>Detalles de SO</h4>
+    Sistema Operativo:
+    <select class="form-control" name="idSO">
+            <?php
+            if (is_array($SO))
+            foreach ($SO as $so) {
+                $selected = ($so['id']==$idSO)?'selected':'';
+            ?>
+            <option value="<?=$so['id']?>" <?=$selected?>><?=$so['nombre']?></option>
+            <?php
+            }
+            ?>
+    </select>
+    <br>
+
+    Detalles de SO:
     <input class="form-control" type="text" name="detallesSO" value="<?=$detallesSO?>">
     <br>  
 
-    <h4>Detalles de Factor de forma</h4>
+    Estado:
+    <select class="form-control" name="idEstado">
+            <?php
+            if (is_array($estados))
+            foreach ($estados as $e) {
+                $selected = ($e['id']==$idEstado)?'selected':'';
+            ?>
+            <option value="<?=$e['id']?>" <?=$selected?>><?=$e['nombre']?></option>
+            <?php
+            }
+            ?>
+    </select>
+    <br>
+    Factor de Forma:
+    <select class="form-control" name="idFactorForma">
+            <?php
+            if (is_array($factorForma))
+            foreach ($factorForma as $ff) {
+                $selected = ($ff['id']==$idFactorForma)?'selected':'';
+            ?>
+            <option value="<?=$ff['id']?>" <?=$selected?>><?=$ff['nombre']?></option>
+            <?php
+            }
+            ?>
+    </select>
+    <br>
+    Detalles de Factor de forma:
     <input class="form-control" type="text" name="detallesFactorForma" value="<?=$detallesFactorForma?>">
     <br>
 
-    <h4>Observaciones</h4>
+    Observaciones:
     <input class="form-control" type="text" name="observaciones" value="<?=$observaciones?>">
     <br>
 
-    <h4>Direccion IP</h4>
-    <input class="form-control" type="text" name="direccionesIP" value="<?=$direccionesIP?>">
+    Direccion IP:
+    <input class="form-control" type="text" name="direccionIP" value="<?=$direccionIP?>">
     <br>
 
-    <h4>Mascara de red</h4>
+    Mascara de red:
     <input class="form-control" type="text" name="mascaraRed" value="<?=$mascaraRed?>">
     <br>
 
-    <h4>Puerto de enlace</h4>
+    Puerto de enlace:
     <input class="form-control" type="text" name="PuertaEnlace" value="<?=$PuertaEnlace?>">
     <br>
 
-    <h4>DNS1</h4>
+    DNS1:
     <input class="form-control" type="text" name="DNS1" value="<?=$DNS1?>">
     <br>
 
-    <h4>DNS2</h4>
+    DNS2:
     <input class="form-control" type="text" name="DNS2" value="<?=$DNS2?>">
     <br>
 
-    <h4>Numero de Serie</h4>
+    Numero de Serie:
     <input class="form-control" type="text" name="numeroSerie" value="<?=$numeroSerie?>">
     <br>
 
-    <h4>Foto</h4>
+    Foto:
     <input class="form-control" type="text" name="foto" value="<?=$foto?>">
     <br>
     <input class="form-control" type="submit" value="Guardar">

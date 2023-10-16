@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once './core/Controlador.php';
 require_once './modelo/ServidoresPublicos.php';
 require_once './modelo/Cargo.php';

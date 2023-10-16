@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    
-</head>
-<body>
+
     <h1><?=$titulo?></h1>
     <a href="?ctrl=CtrlPCs&accion=nuevo">Nuevo PCs</a>
     <table class="table table-hover">
@@ -16,8 +7,12 @@
             <th>PCs</th>
             <th>Usuario</th>
             <th>Clave</th>
+            <th>Tipo de Procesador</th>
             <th>Detalles del Procesador</th>
+            <th>Sistema Operativo</th>
             <th>Detalles del SO</th>
+            <th>Estado</th>
+            <th>Factor de forma</th>
             <th>Detalles del Factor de forma</th>
             <th>Observaciones</th>
             <th>Direcciones IP</th>
@@ -47,10 +42,22 @@ foreach ($data as $d) {
             <?=$d['clavePC']?>
         </td>
         <td>
+            <?=$d['Nombre_Procesadores']?>
+        </td>
+        <td>
             <?=$d['detallesTipoProcesador']?>
         </td>
         <td>
+            <?=$d['Nombre_Operativos']?>
+        </td>
+        <td>
             <?=$d['detallesSO']?>
+        </td>
+        <td>
+            <?=$d['Estado_Equipo']?>
+        </td>
+        <td>
+            <?=$d['Nombre_FactorF']?>
         </td>
         <td>
             <?=$d['detallesFactorForma']?>
@@ -83,7 +90,7 @@ foreach ($data as $d) {
 
         <td>
             
-           <a href="?ctrl=CtrlPCs&accion=editar&id=<?=$d['id']?>"> Editar</a>
+           <a href="?ctrl=CtrlPCs&accion=editar&id=<?=$d['id']?>">Editar</a>
 
            <a href="?ctrl=CtrlPCs&accion=eliminar&id=<?=$d['id']?>">Eliminar</a>
             
@@ -99,5 +106,3 @@ foreach ($data as $d) {
     </table>
 
     <a href="?">Retornar</a>
-</body>
-</html>

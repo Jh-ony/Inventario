@@ -3,8 +3,12 @@
     <a href="?ctrl=CtrlDetallesAsignacion&accion=nuevo">Nuevo Modelo</a>
     <table class="table table-hover">
         <tr>
-            <th>Id</th>
+            <th>ID</th>
+            <th>ID Asignacion</th>
+            <th>ID Equipo</th>
+
             <th>Observaciones</th>
+            <th>Cantidad</th>
     
             <th>Opciones</th>
         </tr>
@@ -17,7 +21,16 @@ foreach ($data as $d) {
             <?=$d['id']?>
         </td>
         <td>
+            <?=$d['idAsignacion']?>
+        </td>
+        <td>
+            <?=$d['idEquipo']?>
+        </td>
+        <td>
             <?=$d['observaciones']?>
+        </td>
+        <td>
+            <?=$d['cantidad']?>
         </td>
       
         <td>

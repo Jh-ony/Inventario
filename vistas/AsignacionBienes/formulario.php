@@ -29,23 +29,48 @@ $titulo = ($esNuevo==1)?'Nueva Asignacion':'Editando Asignacion';
     <input class="form-control" type="date" name="fecha" value="<?=$fecha?>">
     <br>
     ID Servido Publico:
-    <input class="form-control" type="text" name="idServidorPublico" value="<?=$idServidorPublico?>">
+    <select class="form-control" name="idServidorPublico" id="">
+        <?php
+        if (is_array($servidoresPublicos))
+        foreach ($servidoresPublicos as $sp) {
+            
+            $select=($idServidorPublico==$sp['id'])?'selected':'';
+        ?>
+        <option <?=$select?> value="<?=$sp['id']?>">
+            <?=$sp['id']?>
+        </option>
+        <?php } ?>
+    </select>
+
     <br>
+
     ID Estado:
-    <select class="form-control" name="idEstado">
-            <?php
-            if (is_array($estado))
-            foreach ($estado as $e) {
-                $selected = ($e['id']==$idEstado)?'selected':'';
-            ?>
-            <option value="<?=$e['id']?>" <?=$selected?>><?=$e['nombre']?></option>
-            <?php
-            }
-            ?>
+    <select class="form-control" name="idEstado" id="">
+        <?php
+        if (is_array($estados))
+        foreach ($estados as $e) {
+            
+            $select=($idEstado==$e['id'])?'selected':'';
+        ?>
+        <option <?=$select?> value="<?=$e['id']?>">
+            <?=$e['nombre']?>
+        </option>
+        <?php } ?>
     </select>
     <br>
     ID Jefe inmediato:
-    <input class="form-control" type="text" name="idJefeinmediato" value="<?=$idJefeInmediato?>">
+    <select class="form-control" name="idPersonas" id="">
+        <?php
+        if (is_array($personas))
+        foreach ($personas as $p) {
+            
+            $select=($idPersonas==$p['id'])?'selected':'';
+        ?>
+        <option <?=$select?> value="<?=$p['id']?>">
+            <?=$p['nombres'] ,'&nbsp', $p['apellidos']?>
+        </option>
+        <?php } ?>
+    </select>
     <br>
     <input class="form-control" type="submit" value="Guardar">
 

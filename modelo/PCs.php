@@ -6,11 +6,15 @@ class PCs extends Modelo {
     private $nombrePC;
     private $usuarioPC;
     private $clavePC;
+    private $idTipoProcesador;
     private $detallesTipoProcesador;
+    private $idSO;
     private $detallesSO;
+    private $idEstado;
+    private $idFactorForma;
     private $detallesFactorForma;
     private $observaciones;
-    private $direccionesIP;
+    private $direccionIP;
     private $mascaraRed;
     private $PuertaEnlace;
     private $DNS1;
@@ -19,17 +23,22 @@ class PCs extends Modelo {
     private $foto;
 
     private $_tabla='PCs';
+    private $_vista= 'v_pcs';
     
     public function __construct(
         $id=null,
         $nombrePC=null,
         $usuarioPC=null, 
         $clavePC=null,
+        $idTipoProcesador=null,
         $detallesTipoProcesador=null,
+        $idSO=null,
         $detallesSO=null, 
+        $idEstado=null,
+        $idFactorForma=null,
         $detallesFactorForma=null,
         $observaciones=null,
-        $direccionesIP=null,
+        $direccionIP=null,
         $mascaraRed=null,
         $PuertaEnlace=null,
         $DNS1=null,
@@ -39,14 +48,19 @@ class PCs extends Modelo {
         )
 
         {
+            $this->id = $id;
         $this->nombrePC = $nombrePC;
         $this->usuarioPC=$usuarioPC;
         $this->clavePC=$clavePC;
+        $this->idTipoProcesador=$idTipoProcesador;
         $this->detallesTipoProcesador=$detallesTipoProcesador;
+        $this->idSO=$idSO;
         $this->detallesSO=$detallesSO;
+        $this->idEstado=$idEstado;
+        $this->idFactorForma=$idFactorForma;
         $this->detallesFactorForma=$detallesFactorForma;
         $this->observaciones=$observaciones;
-        $this->direccionesIP=$direccionesIP;
+        $this->direccionIP=$direccionIP;
         $this->mascaraRed=$mascaraRed;
         $this->PuertaEnlace = $PuertaEnlace;
         $this->DNS1= $DNS1;
@@ -58,6 +72,7 @@ class PCs extends Modelo {
     }
 
     public function mostrar(){
+        $this->setTabla($this->_vista);
         return $this->getAll();
     }
     public function getRegistro(){
@@ -69,11 +84,15 @@ class PCs extends Modelo {
             'nombrePC'=>"'$this->nombrePC'",
             'usuarioPC'=>"'$this->usuarioPC'",
             'clavePC'=>"'$this->clavePC'",
+            'idTipoProcesador'=>"'$this->idTipoProcesador'",
             'detallesTipoProcesador'=>"'$this->detallesTipoProcesador'",
+            'idSO'=>"'$this->idSO'",
             'detallesSO'=>"'$this->detallesSO'",
+            'idEstado'=>"'$this->idEstado'",
+            'idFactorForma'=>"'$this->idFactorForma'",
             'detallesFactorForma'=>"'$this->detallesFactorForma'",
             'observaciones'=>"'$this->observaciones'",
-            'direccionesIP'=>"'$this->direccionesIP'",
+            'direccionIP'=>"'$this->direccionIP'",
             'mascaraRed'=>"'$this->mascaraRed'",
             'PuertaEnlace'=>"'$this->PuertaEnlace'",
             'DNS1'=>"'$this->DNS1'",
@@ -91,11 +110,15 @@ class PCs extends Modelo {
             'nombrePC'=>"'$this->nombrePC'",
             'usuarioPC'=>"'$this->usuarioPC'",
             'clavePC'=>"'$this->clavePC'",
+            'idTipoProcesador'=>"'$this->idTipoProcesador'",
             'detallesTipoProcesador'=>"'$this->detallesTipoProcesador'",
-            'detalleSO'=>"'$this->detalleSO'",
+            'SO'=>"'$this->idSO'",
+            'detallesSO'=>"'$this->detallesSO'",
+            'idEstado'=>"'$this->idEstado'",
+            'idFactorForma'=>"'$this->idFactorForma'",
             'detallesFactorForma'=>"'$this->detallesFactorForma'",
             'observaciones'=>"'$this->observaciones'",
-            'direccionesIP'=>"'$this->direccionesIP'",
+            'direccionIP'=>"'$this->direccionIP'",
             'mascaraRed'=>"'$this->mascaraRed'",
             'PuertaEnlace'=>"'$this->PuertaEnlace'",
             'DNS1'=>"'$this->DNS1'",

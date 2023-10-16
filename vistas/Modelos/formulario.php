@@ -2,6 +2,7 @@
 $id = isset($obj['id'])?$obj['id']:'';
 $nombre = isset($obj['nombre'])?$obj['nombre']:'';
 $detalles = isset($obj['detalles'])?$obj['detalles']:'';
+$idMarcas = isset($obj['idMarcas'])?$obj['idMarcas']:'';
 
 # var_dump($obj);exit;
 $esNuevo = isset($obj['id'])?0:1; #0: No es Nuevo (Editar) / 1: Es nuevo
@@ -28,6 +29,20 @@ $titulo = ($esNuevo==1)?'Nuevo Modelo':'Editando Modelo';
     <br>
     Detalles:
     <input class="form-control" type="text" name="detalles" value="<?=$detalles?>">
+    <br>
+    Marca:
+    <select class="form-control" name="idMarcas">
+            <?php
+            if (is_array($marcas))
+            foreach ($marcas as $m) {
+                $selected = ($m['id']==$idMarcas)?'selected':'';
+            ?>
+            <option value="<?=$m['id']?>" <?=$selected?>><?=$m['nombre']?></option>
+            <?php
+            }
+            ?>
+    </select>
+
     <br>
     <input class="form-control" type="submit" value="Guardar">
 

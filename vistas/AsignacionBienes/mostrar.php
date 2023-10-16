@@ -25,10 +25,10 @@ foreach ($data as $d) {
             <?=$d['idServidorPublico']?>
         </td>
         <td>
-            <?=$d['idEstado']?>
+            <?=$d['Estado_Bienes']?>
         </td>
         <td>
-            <?=$d['idJefeInmediato']?>
+            <?=$d['Nombre_Jefe']?> <?=$d['Apellido_Jefe']?>
         </td>
         <td>
             

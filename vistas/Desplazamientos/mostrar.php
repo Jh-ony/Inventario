@@ -5,6 +5,8 @@
         <tr>
             <th>Id</th>
             <th>Fecha</th>
+            <th>Servidor de origen</th>
+            <th>Servidor Destino</th>
         
             <th>Opciones</th>
         </tr>
@@ -19,7 +21,12 @@ foreach ($data as $d) {
         <td>
             <?=$d['fecha']?>
         </td>
-        
+        <td>
+            <?=$d['idServidorOrigen']?>
+        </td>
+        <td>
+            <?=$d['idServidorDestino']?>
+        </td>
         <td>
             
            <a href="?ctrl=CtrlDesplazamientos&accion=editar&id=<?=$d['id']?>"> Editar</a>

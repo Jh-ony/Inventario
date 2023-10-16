@@ -2,6 +2,7 @@
 session_start();
 require_once './core/Controlador.php';
 require_once './modelo/Desplazamientos.php';
+require_once './modelo/ServidoresPublicos.php';
 
 
 class CtrlDesplazamientos extends Controlador {
@@ -13,32 +14,59 @@ class CtrlDesplazamientos extends Controlador {
             'titulo'=>'Desplazamientos',
             'data'=>$data['data']
         ];
-        $this->mostrar('Desplazamientos/mostrar.php',$datos);
+        $home = $this->mostrar('Desplazamientos/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
         
+        $objSePulbicos = new ServidoresPublicos;
+        $dataSePublicos = $objSePulbicos->mostrar();
+        $datos = [
+            'servidoresPublicos'=>$dataSePublicos['data']
+        ]; 
 
-        $this->mostrar('Desplazamientos/formulario.php');
+        $home = $this->mostrar('Desplazamientos/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function editar(){
         $id = $_GET['id'];
         $obj = new Desplazamientos($id);
         $data = $obj->getRegistro();
-        
+        $objSePulbicos = new ServidoresPublicos;
+        $dataSePublicos = $objSePulbicos->mostrar();
+        $datos = [
+            'servidoresPublicos'=>$dataSePublicos['data']
+        ]; 
+
         $datos = [
             'obj'=>$data['data'][0],
-            
+            'servidoresPublicos'=>$dataSePublicos['data']
         ];
-        $this->mostrar('Desplazamientos/formulario.php',$datos);
+        $home = $this->mostrar('Desplazamientos/formulario.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
     }
     public function guardar(){
         $id=$_POST['id'];
         $fecha=$_POST['fecha'];
-    
+        $idServidorOrigen=$_POST['idServidorOrigen'];
+        $idServidorDestino=$_POST['idServidorDestino'];
+
 
         $esNuevo=$_POST['esNuevo'];
 
-        $obj = new Desplazamientos($id,$fecha);
+        $obj = new Desplazamientos($id,$fecha,$idServidorOrigen,$idServidorDestino);
 
         switch ($esNuevo) {
             case '0': # Editar

@@ -1,7 +1,9 @@
 <?php
 $id = isset($obj['id'])?$obj['id']:'';
+$idAsignacion = isset($obj['idAsignacion'])?$obj['idAsignacion']:'';
+$idEquipo = isset($obj['idEquipo'])?$obj['idEquipo']:'';
 $observaciones = isset($obj['observaciones'])?$obj['observaciones']:'';
-
+$cantidad = isset($obj['cantidad'])?$obj['cantidad']:'';
 # var_dump($obj);exit;
 $esNuevo = isset($obj['id'])?0:1; #0: No es Nuevo (Editar) / 1: Es nuevo
 $titulo = ($esNuevo==1)?'Nuevo Detalle Asignacion':'Editando Detalle Asignacion';
@@ -22,8 +24,20 @@ $titulo = ($esNuevo==1)?'Nuevo Detalle Asignacion':'Editando Detalle Asignacion'
     <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
     <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
     <br>
+
+    ID Asignacion
+    <input class="form-control" type="text" name="idAsignacion" value="<?=$idAsignacion?>">
+    <br>
+    ID Equipo
+    <input class="form-control" type="text" name="idEquipo" value="<?=$idEquipo?>">
+    <br>
+
     Observacion:
     <input class="form-control" type="text" name="observaciones" value="<?=$observaciones?>">
+    <br>
+
+    Cantidad
+    <input class="form-control" type="text" name="cantidad" value="<?=$cantidad?>">
     <br>
   
     <input class="form-control" type="submit" value="Guardar">

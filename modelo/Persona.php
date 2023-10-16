@@ -35,6 +35,10 @@ class Persona extends Modelo {
 
         parent::__construct($this->_tabla);
     }
+    public function mostrar(){
+        return $this->getAll();
+    }
+    
     public function getTodo(){
         return $this->getAll();
     }
