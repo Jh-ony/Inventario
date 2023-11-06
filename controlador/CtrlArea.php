@@ -21,8 +21,8 @@ class CtrlArea extends Controlador {
         $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
-        $obj = new Oficina;
-        $data = $obj->mostrar();
+        $objOficina = new Oficina;
+        $data = $objOficina->mostrar();
         $datos = [
             'oficinas'=>$data['data']
         ];  
@@ -39,8 +39,8 @@ class CtrlArea extends Controlador {
         $obj = new Area($id);
         $data = $obj->getRegistro();
 
-        $obj = new Oficina;
-        $dataOficina = $obj->mostrar();
+        $objOficina = new Oficina;
+        $dataOficina = $objOficina->mostrar();
         
         
         $datos = [
@@ -83,4 +83,46 @@ class CtrlArea extends Controlador {
         $this->index();
 
     }
+
+    /*public function filtrar(){
+        $obj = new Area();
+        $data = $obj->mostrar();
+        $objOficina = new Oficina;
+        $dataOficina = $objOficina->mostrar();
+        $respuesta = $obj ->filtrado($id, $idOficina);
+        $datos = [
+            'titulo'=>'Filtrar Areas',
+
+            'data'=>$data['data'],
+            'oficinas'=>$dataOficina['data']
+        ];
+        $home = $this->mostrar('areas/filtro.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+    }
+
+    public function filtro(){
+        //$id = $_GET['id'];
+        $obj = new Area();
+        $data = $obj->mostrar();
+        
+        $respuesta= $obj->filtrado();
+        $datos = [
+
+
+            'data'=>$data['data']
+            
+            
+        ];  
+        $home = $this->mostrar('areas/filtro.php',$datos,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+        $orden = "SELECT *FROM v_areas WHERE id= $id OR idEquipo='idEquipo'";
+        return $orden;
+    }*/
 }

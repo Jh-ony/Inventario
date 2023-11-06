@@ -27,9 +27,11 @@ $titulo = ($esNuevo==1)?'Nueva Periferico':'Editando Periferico';
     id:
     <!--<input class="form-control" type="text" name="id" value="<?=$id?>">
     <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">-->
+    <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
     <select class="form-control" name="id" value= "<?$id?>">
+        
             <?php
-            if (is_array($id))
+            if (is_array($equipo))
             foreach ($equipo as $eq) {
                 $selected = ($eq['id']==$idEquipo)?'selected':'';
             ?>

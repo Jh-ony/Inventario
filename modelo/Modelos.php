@@ -6,14 +6,14 @@ class Modelos extends Modelo {
     private $id;
     private $nombre;
     private $detalles;
-    private $idMarcas;
+    private $idMarca;
     private $_tabla='modelos';
     private $_vista='v_modelos';
-    public function __construct($id=null,$nombre=null,$detalles=null,$idMarcas=null){
+    public function __construct($id=null,$nombre=null,$detalles=null,$idMarca=null){
         $this->id = $id;
         $this->nombre=$nombre;
         $this->detalles=$detalles;
-        $this->idMarcas=$idMarcas;
+        $this->idMarca=$idMarca;
         parent::__construct($this->_tabla);
     }
 
@@ -28,7 +28,7 @@ class Modelos extends Modelo {
         $data=[
             'nombre'=>"'$this->nombre'",
             'detalles'=>"'$this->detalles'",
-            'idMarcas'=>"'$this->idMarcas'"
+            'idMarca'=>"'$this->idMarca'"
         ];
         return $this->insert($data);
     }
@@ -36,7 +36,7 @@ class Modelos extends Modelo {
         $data=[
             'nombre'=>"'$this->nombre'",
             'detalles'=>"'$this->detalles'",
-            'idMarcas'=>"'$this->idMarcas'"
+            'idMarca'=>"'$this->idMarca'"
         ];
         $wh = 'id='.$this->id;
         return $this->update($wh, $data);

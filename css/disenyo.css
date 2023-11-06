@@ -1,0 +1,485 @@
+
+
+.btn-primary{
+    background-color: aqua;
+}
+
+.button
+{
+
+    text-decoration: none;
+    color:rgb(45, 45, 45);
+
+
+}
+#nuevo
+{
+    border-style: solid;
+    border-radius: 1vmin;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: x-large;
+    
+}
+#eliminar 
+{
+    background-color: red;
+    border-radius: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+    font-size: larger;
+    color: white ;
+
+}
+
+#editar
+{
+
+
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-size: x-large;
+    align-content: right;
+
+}
+
+/*.barra
+{
+
+    left: 0;
+    width: 18%;
+    height: a;
+    top: 0;
+    background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
+}
+
+
+.cajaContenido
+{
+    background-color: blue;
+    margin: 0;
+   position: fixed;
+    left: 12%;
+    top: 12%;
+    width: 100%;
+    height: 100%;
+}
+*/
+.titulo
+{
+    /*background-color: white;*/
+    padding-left: 2%;
+    text-transform: uppercase;
+    font-size: xx-large;
+
+
+}
+
+.datos
+{
+
+    width: 65%;
+    background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
+    left: 22%;
+    border-radius: 3vmax;
+    padding-left: 3%;
+    padding-right:25%;
+    padding-bottom: 18%;
+    margin-left: 50px;
+    margin-top: -30px;
+    padding-top: 2%;
+
+ 
+}
+
+.inventario
+{
+    background: url(imagenesCSS/final.png) no-repeat;
+    padding-top: 24%;
+    padding-right: 95%;
+    background-size: contain;
+    border-style: none;
+    text-align: center;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    margin-bottom: 5px;
+}
+   
+
+.tabla
+{
+    width: 85%;
+    border-collapse: separate;
+    border-spacing: 10px;
+
+
+
+}
+
+th
+{
+
+   background-color: #73d5ff;
+   /*background-color: white;*/
+    /*border-radius:1vmin;*/
+    /*border-style: solid;*/    
+    border-radius: 1vmin;
+    padding-top: 2px;
+    padding-bottom: 2px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: medium;
+
+
+
+}
+
+td{
+    font-size: medium;
+    border-spacing: 12px;
+    background-color: white;
+    border-radius:1vmin;
+    /*border-style: solid;*/
+    border-width: 1px;
+    border-radius: 1vmin;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.contside
+{
+   
+    font-size: medium;
+    text-transform: uppercase;
+    
+    margin-left: -15%;
+    width: 100%;
+
+
+}
+
+.side-tabla
+{
+    border-spacing: 10px;
+}
+
+.sides
+{
+
+    /*background-color: white;*/
+    background-color: #73d5ff;
+    border-style: none;
+    text-align: left;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 15px;
+    border-radius: 2vmin;
+    margin-bottom: 10px;
+
+    border:solid transparent; 
+
+
+ 
+}
+
+#sider
+{
+    background-color: white;
+
+    /*background-color: #73d5ff;*/
+
+}
+
+/*@media (hover:hover){
+    .sides :hover
+    {
+        background-color: #4495fa; 
+
+
+
+    }
+    }*/
+
+
+
+.noColor
+{
+    border-style: none;
+    background-color: transparent;
+}
+
+.interior
+{
+margin: 0;
+}
+
+/*
+.pDePagina
+{
+
+    background-color: rgba(42, 42, 42, 0.734);
+    width: 82%;
+    right: 0;
+    bottom: 0;
+    color: white;
+    text-shadow: 3px 3px 5px black;
+}
+
+.ie
+{
+    text-align: left;
+}
+.version
+{
+    text-align: right;
+}*/
+
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+    margin: 0;
+    height: 720px;
+
+}
+.arrow
+{
+
+    width: 3%;
+    margin-left: 84%;
+    margin-top: -40px;
+}
+
+#down
+{
+    font-size: xx-large;
+}
+.sesion
+{
+
+    width: 8%;
+    margin-left: 88%;
+    margin-top: 2%;
+}
+.perfil
+{
+    background-color: grey;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 50%;
+    font-size: xx-large;
+
+}
+
+body::-webkit-scrollbar
+{
+ display: none;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background: rgba(0, 0, 0, 0.025);
+}
+
+.gridContainer > *
+{
+    /*box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);*/
+
+    padding: 10px;
+
+}
+
+.header
+{
+    grid-area: header;
+    background-color:white;
+    border-bottom: 5px;
+    border-style: solid;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-color: rgba(128, 128, 128, 0.158);
+    
+}
+
+.scroll-space
+{
+
+
+    height: 645px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+
+.sidebar
+{
+    grid-area: sidebar;
+    background-color: white;
+    margin: 0;
+    background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
+}
+
+.main
+{
+    grid-area: main;
+    background-color: rgba(227, 234, 246, 0.667);
+}
+
+.footer
+{
+    grid-area: footer;
+    background-color: gray;
+}
+.otro
+{
+    grid-area: otro;
+    text-align: right;
+    background-color:white;
+    border-bottom: 5px;
+    border-style: solid;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-color: rgba(128, 128, 128, 0.158);
+}
+.logo{
+    grid-area: logo;
+    background-color: #4495fa;
+}
+.logotipo
+{
+    background: url(imagenesCSS/logolicenciado.png) no-repeat;
+    padding-bottom: 70%;
+}
+.gridContainer
+{
+    display: grid;
+    
+    grid-template: 
+    
+    "logo header" 100px
+    "otro otro" 100px
+    "main main" auto
+    "sidebar sidebar" auto
+    "footer footer" 100px /
+    100px auto;
+}
+.gridContainer ::-webkit-scrollbar
+{
+    width: 10px;
+    background: rgba(0, 0, 255, 0.266);
+    border-radius: 8px;
+    margin-right: 200px;
+}
+
+.gridContainer ::-webkit-scrollbar-thumb
+{
+    background: rgba(0, 0, 255, 0.418);
+    border-radius: 8px;
+}
+@media (min-width: 600px)
+{
+    .gridContainer
+    {
+        /*grid-template-columns: 250px auto;
+        grid-template-rows: 100px auto 200;*/
+        grid-template:
+        "logo otro header" 100px
+        "sidebar main main"  auto
+        "sidebar footer footer" 100px /
+        250px   200px auto;
+
+    }
+}
+
+@media (min-width: 900px)
+{
+    .gridContainer
+    {
+        /*grid-template-columns: 250px auto;
+        grid-template-rows: 100px auto 200;*/
+        grid-template:
+        "logo otro header" 100px
+        "sidebar main main" auto
+        "sidebar footer footer" 70px /
+        300px  400px auto;
+
+    }
+}
+
+
+
+/*--FORMULARIOS--*/
+
+.form
+{
+    width: 70%;
+    border-radius: 6px;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.atributo
+{
+    border-style: solid;
+    width: 15%;
+    border-radius: 6px;
+    padding: 8px;
+    margin-left: 5%;
+}
+
+#guardar
+{
+    background-color: lime;
+    border-style: none;
+    width: 25%;
+;
+}
+
+.titulo2
+{
+
+    text-transform: uppercase;
+    font-size: larger;
+}
+
+.caja-form
+{
+    margin-top: -25px;
+    border-style: solid;
+    border-radius: 3vmax;
+    margin-left: 25%;
+    width: 40%;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 10px 10px 40px;
+}
+
+.button2
+{
+
+    text-decoration: none;
+    color:rgb(45, 45, 45);
+    margin-left: -72%;
+
+
+}

@@ -72,6 +72,15 @@ class EntidadBase
         # echo $this->_sql."<br>"; # exit();
         return $this->_bd->ejecutar($this->_sql);
     } 
+
+    public function getFiltro($wh, $datos){
+        $this->_sql->setTabla($this->_tabla);
+        $this->_sql->addWhere($wh);
+        $this->_sql->setDatos($datos);
+        $this->_sql->setComando("SELECT");
+        # echo $this->_sql;exit;
+        return $this->_bd->ejecutar($this->_sql);
+    }
  
     /*
      * Aquí podemos montarnos un montón de métodos que nos ayuden

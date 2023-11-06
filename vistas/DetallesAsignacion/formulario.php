@@ -26,10 +26,30 @@ $titulo = ($esNuevo==1)?'Nuevo Detalle Asignacion':'Editando Detalle Asignacion'
     <br>
 
     ID Asignacion
-    <input class="form-control" type="text" name="idAsignacion" value="<?=$idAsignacion?>">
+    <select class="form-control" name="idAsignacion"value >
+            <?php
+            if (is_array($asignacion))
+            foreach ($asignacion as $a) {
+                $selected = ($a['id']==$idAsignacion)?'selected':'';
+            ?>
+            <option value="<?=$a['id']?>" <?=$selected?>><?=$a['id']?></option>
+            <?php
+            }
+            ?>
+    </select>
     <br>
     ID Equipo
-    <input class="form-control" type="text" name="idEquipo" value="<?=$idEquipo?>">
+    <select class="form-control" name="idEquipo"value >
+            <?php
+            if (is_array($equipos))
+            foreach ($equipos as $eq) {
+                $selected = ($eq['id']==$idEquipo)?'selected':'';
+            ?>
+            <option value="<?=$eq['id']?>" <?=$selected?>><?=$eq['id']?></option>
+            <?php
+            }
+            ?>
+    </select>
     <br>
 
     Observacion:

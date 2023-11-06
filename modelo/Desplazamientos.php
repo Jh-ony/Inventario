@@ -17,6 +17,9 @@ class Desplazamientos extends Modelo {
     }
 
     public function mostrar(){
+
+        $this->setTabla($this->_tabla);
+
         return $this->getAll();
     }
     public function getRegistro(){
@@ -24,6 +27,7 @@ class Desplazamientos extends Modelo {
     }
     public function guardar(){
         $data=[
+            //'id'=>"'$this->id'",
             'fecha'=>"'$this->fecha'",
             'idServidorOrigen'=>"'$this->idServidorOrigen'",
             'idServidorDestino'=>"'$this->idServidorDestino'"
@@ -33,6 +37,7 @@ class Desplazamientos extends Modelo {
     }
     public function actualizar(){
         $data=[
+            //'id'=>"'$this->id'",
             'fecha'=>"'$this->fecha'",
             'idServidorOrigen'=>"'$this->idServidorOrigen'",
             'idServidorDestino'=>"'$this->idServidorDestino'"

@@ -1,44 +1,66 @@
-
+<div class="contenido">
+<div class="titulo">
     <h1><?=$titulo?></h1>
-    <a href="?ctrl=CtrlArea&accion=nuevo">Nueva Area</a>
-    <table class="table table-hover">
-        <tr>
-            <th>ID</th>
-            <th>Oficina</th>
-            <th>Nombre</th>
-            <th>Opciones</th>
-
-        </tr>
-<?php
-if (is_array($data))
-foreach ($data as $d) {
-    ?>
-    <tr>
-        <td>
-            <?=$d['id']?>
-        </td>
-        <td>
-            <?=$d['Nombre_Oficinas']?>
-        </td>
-        <td>
-            <?=$d['nombre']?>
-        </td>
-
-        <td>
+    </div>
+        <div class="datos">
+            <div class="interior">
             
-           <a href="?ctrl=CtrlArea&accion=editar&id=<?=$d['id']?>"> Editar</a>
 
-           <a href="?ctrl=CtrlArea&accion=eliminar&id=<?=$d['id']?>">Eliminar</a>
-            
-        </td>
-    </tr>
+            <!--<a href="?ctrl=CtrlArea&accion=filtrar">Filtrar</a>-->
+            <table class="tabla">
+                <tr>
+                    <th>ID</th>
+                    <th>Oficina</th>
+                    <th>Nombre</th>
+                    <th class=noColor><a href="?ctrl=CtrlArea&accion=nuevo" class=button id=nuevo>
+                    <i class="fa-solid fa-plus" style="color: #000000;"></i>
+                    </a></th>
+
+                </tr>
+                
+        <?php
+        if (is_array($data))
+        foreach ($data as $d) {
+            ?>
+            <tr>
+                <td>
+                    <?=$d['id']?>
+                </td>
+                <td>
+                    <?=$d['Nombre_Oficinas']?>
+                </td>
+                <td>
+                    <?=$d['nombre']?>
 
 
-    <?php
-}
-?>
+
+                </td>
+                
+                <td class=noColor>
+                    
+
+                <a href="?ctrl=CtrlArea&accion=editar&id=<?=$d['id']?>" class=button id=editar>
+                <i class="fa-regular fa-pen-to-square" style="color: #0fc5d2;"></i>
+                </a>
+                <a href="?ctrl=CtrlArea&accion=eliminar&id=<?=$d['id']?>" class=button id=eliminar>
+                <i class="fa-regular fa-trash-can" style="color: #ffffff;">
+                </i></a>
+                    
+                </td>
+            </tr>
 
 
-    </table>
+            <?php
+        }
+        ?>
 
-    <a href="?">Retornar</a>
+
+            </table>
+
+            <a href="?" class=button>
+            <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>    
+            Retornar</a>
+            </div>
+        </div> 
+
+</div>

@@ -4,6 +4,7 @@ class Estados extends Modelo {
     private $id;
     private $nombre;
     private $_tabla='estados';
+
     public function __construct($id=null,$nombre=null){
         $this->id = $id;
         $this->nombre=$nombre;
@@ -12,6 +13,7 @@ class Estados extends Modelo {
     }
 
     public function mostrar(){
+
         return $this->getAll();
     }
     public function getRegistro(){

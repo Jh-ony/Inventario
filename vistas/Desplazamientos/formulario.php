@@ -1,6 +1,6 @@
 <?php
 $id = isset($obj['id'])?$obj['id']:'';
-$fecha = isset($obj['fecha$fecha'])?$obj['fecha$fecha']:'';
+$fecha = isset($obj['fecha'])?$obj['fecha']:'';
 $idServidorOrigen = isset($obj['idServidorOrigen'])?$obj['idServidorOrigen']:'';
 $idServidorDestino = isset($obj['idServidorDestino'])?$obj['idServidorDestino']:'';
 
@@ -30,8 +30,8 @@ $titulo = ($esNuevo==1)?'Nuevo Desplazamineto':'Editando Desplazamineto';
     Servidor Origen
     <select class="form-control" name="idServidorOrigen" id="">
         <?php
-        if (is_array($servidoresPublicos))
-        foreach ($servidoresPublicos as $spO) {
+        if (is_array($seOrigen))
+        foreach ($seOrigen as $spO) {
             
             $select=($idServidorPublico==$spO['id'])?'selected':'';
         ?>
@@ -44,8 +44,8 @@ $titulo = ($esNuevo==1)?'Nuevo Desplazamineto':'Editando Desplazamineto';
     Servidor Destino
     <select class="form-control" name="idServidorDestino" id="">
         <?php
-        if (is_array($servidoresPublicos))
-        foreach ($servidoresPublicos as $spD) {
+        if (is_array($seDestino))
+        foreach ($seDestino as $spD) {
             
             $select=($idServidorPublico==$spD['id'])?'selected':'';
         ?>

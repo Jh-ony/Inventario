@@ -23,11 +23,16 @@ class CtrlDesplazamientos extends Controlador {
     }
     public function nuevo(){
         
-        $objSePulbicos = new ServidoresPublicos;
-        $dataSePublicos = $objSePulbicos->mostrar();
+        $objSeOrigen = new ServidoresPublicos;
+        $objSeDestino = new ServidoresPublicos;
+        $dataSeOrigen = $objSeOrigen->mostrar();
+        $dataSeDestino = $objSeDestino->mostrar();
         $datos = [
-            'servidoresPublicos'=>$dataSePublicos['data']
-        ]; 
+
+                'seOrigen'=>$dataSeOrigen['data'],
+                'seDestino'=>$dataSeDestino['data']
+            ]; 
+        
 
         $home = $this->mostrar('Desplazamientos/formulario.php',$datos,true);
 
@@ -40,15 +45,17 @@ class CtrlDesplazamientos extends Controlador {
         $id = $_GET['id'];
         $obj = new Desplazamientos($id);
         $data = $obj->getRegistro();
-        $objSePulbicos = new ServidoresPublicos;
-        $dataSePublicos = $objSePulbicos->mostrar();
-        $datos = [
-            'servidoresPublicos'=>$dataSePublicos['data']
-        ]; 
+        
+        $objSeOrigen = new ServidoresPublicos;
+        $objSeDestino = new ServidoresPublicos;
+        $dataSeOrigen = $objSeOrigen->mostrar();
+        $dataSeDestino = $objSeDestino->mostrar();
+
 
         $datos = [
             'obj'=>$data['data'][0],
-            'servidoresPublicos'=>$dataSePublicos['data']
+            'seOrigen'=>$dataSeOrigen['data'],
+            'seDestino'=>$dataSeDestino['data']
         ];
         $home = $this->mostrar('Desplazamientos/formulario.php',$datos,true);
 

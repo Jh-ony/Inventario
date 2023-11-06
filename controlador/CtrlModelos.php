@@ -22,10 +22,10 @@ class CtrlModelos extends Controlador {
         $this->mostrar('plantilla/home.php',$datos);
     }
     public function nuevo(){
-        $objMarcas= new Marcas();
-        $dataMarcas = $objMarcas ->mostrar();
+        $objMarca= new Marcas();
+        $dataMarca = $objMarca ->mostrar();
         $datos =[
-            'marcas'=>$dataMarcas['data']
+            'marcas'=>$dataMarca['data']
         ];
 
 
@@ -40,11 +40,11 @@ class CtrlModelos extends Controlador {
         $id = $_GET['id'];
         $obj = new Modelos($id);
         $data = $obj->getRegistro();
-        $objMarcas= new Marcas();
-        $dataMarcas = $objMarcas ->mostrar();
+        $objMarca= new Marcas();
+        $dataMarca = $objMarca ->mostrar();
         $datos = [
             'obj'=>$data['data'][0],
-            'marcas'=>$dataMarcas['data']
+            'marcas'=>$dataMarca['data']
             
         ];
         $home = $this->mostrar('Modelos/formulario.php',$datos,true);
@@ -58,12 +58,12 @@ class CtrlModelos extends Controlador {
         $id=$_POST['id'];
         $nombre=$_POST['nombre'];
         $detalles=$_POST['detalles'];
-        $idMarcas=$_POST['idMarcas'];
+        $idMarca=$_POST['idMarca'];
     
 
         $esNuevo=$_POST['esNuevo'];
 
-        $obj = new Modelos($id,$nombre,$detalles,$idMarcas);
+        $obj = new Modelos($id,$nombre,$detalles,$idMarca);
 
         switch ($esNuevo) {
             case '0': # Editar

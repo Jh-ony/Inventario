@@ -1,8 +1,8 @@
 <?php
 require_once './core/Modelo.php';
-require_once 'Estados.php';
+//require_once 'Estados.php';
 
-class Perifericos extends Estados {
+class Perifericos extends Modelo{
     private $id;
     private $idEstado;
     private $nombre;
@@ -10,7 +10,7 @@ class Perifericos extends Estados {
     private $foto;
     private $observaciones;
     private $_tabla='perifericos';
-    private $vista='v_perifericos';
+    private $_vista='v_perifericos';
 
     public function __construct($id=null,$idEstado=null,$nombre=null
             ,$descripcion=null, $foto=null
@@ -24,23 +24,23 @@ class Perifericos extends Estados {
         $this->foto = $foto;
         $this->observaciones = $observaciones;
 
-        #parent::__construct($id, $nombre);
+
 
         parent::__construct($this->_tabla);
     }
-    public function getTodo(){
-        $this->setTabla($this->_tabla);
+    public function mostrar(){
+        $this->setTabla($this->_vista);
         return $this->getAll();
     }
     public function eliminar(){
-        $this->setTabla($this->_tabla);
-        $this->deleteById($this->id);
+        //$this->setTabla($this->_tabla);
+        return $this->deleteById($this->id);
         # var_dump($this->_tabla);exit;
-        $this->setTabla('perifericos');
-        parent::eliminar();
+
     }
     public function guardar(){
-        #parent::guardar();
+        //$this->setTabla($this->_tabla);
+        //parent::guardar();
         $data = [
             'id'=>"$this->id",
             'idEstados'=>"$this->idEstado",
@@ -49,17 +49,17 @@ class Perifericos extends Estados {
             'foto'=>"$this->foto",
             'observaciones'=>"$this->observaciones",
         ];
-        $this->setTabla('perifericos');
+        //$this->setTabla('perifericos');
     #echo "Siguiente: ". $this->idSiguiente;
      #   exit;
         return $this->insert($data);
     }
-    public function editar(){
-        $this->setTabla($this->_vista);
+    public function getRegistro(){
+        //$this->setTabla($this->_tabla);
         return $this->getById($this->id);
     }
     public function actualizar(){
-        #parent::actualizar();
+        //parent::actualizar();
         $datos = [
             'id'=>"$this->id",
             'idEstados'=>"$this->idEstado",
@@ -68,7 +68,7 @@ class Perifericos extends Estados {
             'foto'=>"$this->foto",
             'observaciones'=>"$this->observaciones",
         ];
-        $this->setTabla('perifericos');
+        //$this->setTabla('perifericos');
         $wh = "id=$this->id";
         return $this->update($wh,$datos);
     }

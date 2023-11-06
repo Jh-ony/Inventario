@@ -21,6 +21,7 @@ class Area extends Modelo {
 
         return $this->getAll();
     }
+
     public function getRegistro(){
         return $this->getById($this->id);
     }
@@ -41,5 +42,14 @@ class Area extends Modelo {
     }
     public function eliminar(){
         return $this->deleteById($this->id);
+    }
+
+    public function filtrado(){
+        $columna ='idOficina';
+        
+        $valor=[
+            "'$this->idOficina'"
+        ];
+        return $this->getBy($this->columna, $this->valor);
     }
 }

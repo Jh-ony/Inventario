@@ -26,7 +26,7 @@ class CtrlDetallesAsignacion extends Controlador {
     public function nuevo(){
 
         $objEquipos = new Equipos;
-        $objAsignacion = new ServidoresPublicos;
+        $objAsignacion = new ASignacionBienes;
         $dataEquipos = $objEquipos->mostrar();
         $dataAsignacion = $objAsignacion->mostrar();
 
@@ -46,10 +46,12 @@ class CtrlDetallesAsignacion extends Controlador {
         $id = $_GET['id'];
         $obj = new DetallesAsignacion($id);
         $data = $obj->getRegistro();
+
         $objEquipos = new Equipos;
-        $objAsignacion = new ServidoresPublicos;
+        $objAsignacion = new ASignacionBienes;
         $dataEquipos = $objEquipos->mostrar();
         $dataAsignacion = $objAsignacion->mostrar();
+
 
         $datos = [
             'obj'=>$data['data'][0],
@@ -65,10 +67,13 @@ class CtrlDetallesAsignacion extends Controlador {
     }
     public function guardar(){
         $id=$_POST['id'];
-        $nombre=$_POST['nombre'];
+        $idAsignacion=$_POST['idAsignacion'];
+        $idEquipo=$_POST['idEquipo'];
+        $observaciones=$_POST['observaciones'];
+        $cantidad=$_POST['cantidad'];
         $esNuevo=$_POST['esNuevo'];
 
-        $obj = new DetallesAsignacion($id,$nombre);
+        $obj = new DetallesAsignacion($id,$idAsignacion,$idEquipo,$observaciones,$cantidad);
 
         switch ($esNuevo) {
             case '0': # Editar

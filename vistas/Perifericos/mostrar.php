@@ -1,6 +1,7 @@
 
     <h1><?=$titulo?></h1>
     <a href="?ctrl=CtrlPerifericos&accion=nuevo">Nuevo Periferico</a>
+    <!--<a href="?ctrl=CtrlPerifericos&accion=busqueda">Buscar</a>-->
     <table class="table table-hover">
         <tr>
             <th>Id</th>
@@ -20,7 +21,7 @@ foreach ($datos as $d) {
             <?=$d['id']?>
         </td>
         <td>
-            <?=$d['idEstado']?>
+            <?=$d['Estado_Equipo']?>
         </td>
         <td>
             <?=$d['nombre']?>
@@ -52,4 +53,6 @@ foreach ($datos as $d) {
     </table>
 
     <a href="?">Retornar</a>
+
+
  
