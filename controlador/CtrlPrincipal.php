@@ -14,7 +14,7 @@ class CtrlPrincipal extends Controlador {
         $datos = [
             'menu'=>$this->getMenu(),
             'titulo'=>'Sistema IES.',
-            'usuario'=>'Remy',
+            'usuario'=>'',
             // 'datos'=>$data['data']
         ];
 

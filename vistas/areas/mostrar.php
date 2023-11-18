@@ -1,20 +1,34 @@
 <div class="contenido">
-<div class="titulo">
+
+    <div class="titulo">
     <h1><?=$titulo?></h1>
     </div>
         <div class="datos">
-            <div class="interior">
-            
 
+        <a href="?" class=button>
+            <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>    
+            Retornar</a>
+            <div class="interior">
+               <!-- <div class="filtrado">
+                    <a href="?ctrl=CtrlArea&accion=metFiltro">Filtrar</a>
+                </div>-->
             <!--<a href="?ctrl=CtrlArea&accion=filtrar">Filtrar</a>-->
             <table class="tabla">
                 <tr>
                     <th>ID</th>
                     <th>Oficina</th>
                     <th>Nombre</th>
-                    <th class=noColor><a href="?ctrl=CtrlArea&accion=nuevo" class=button id=nuevo>
-                    <i class="fa-solid fa-plus" style="color: #000000;"></i>
-                    </a></th>
+                    <th class=noColor>
+                        <button type="button" ></button>
+                        <button >abrir</button>
+                        <dialog class=modal id=mainModal>
+                        <a href="?ctrl=CtrlArea&accion=nuevo" class=button id=nuevo>
+                        <i class="fa-solid fa-plus" style="color: #000000;"></i>
+                    </a>
+                    <button onclick="closeModal()">cerrar</button>
+                        </dialog>
+                        <script src="aaa.js"></script>
+                </th>
 
                 </tr>
                 
@@ -57,9 +71,7 @@
 
             </table>
 
-            <a href="?" class=button>
-            <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>    
-            Retornar</a>
+
             </div>
         </div> 
 

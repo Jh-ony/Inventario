@@ -11,23 +11,37 @@ $titulo = ($esNuevo==1)?'Nueva Oficina':'Editar Oficina';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
 </head>
 <body>
-    <h1><?=$titulo?></h1>
-    <form action="?ctrl=CtrlOficina&accion=guardar" method="post">
+    <div class="caja-form">
+            <div class="titulo2">
+            <h1><?=$titulo?></h1>
+            </div>
+            
+                    <form action="?ctrl=CtrlOficina&accion=guardar" method="post">
 
-    id:
-    <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
-    <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
-    <br>
-    Oficina:
-    <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
-    <br>
-    <br>
-    <input class="form-control" type="submit" value="Guardar">
+                    <div class="atributo">
+                            ID
+                            </div>
+                            <br>
+                    <input class="form" type="text" name="id" value="<?=$id?>" readonly>
+                    <input class="form" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
+                    <br><br>
+                    <div class="atributo">
+                            Oficina
+                            </div>
+                            <br>
+                    <input class="form" type="text" name="nombre" value="<?=$nombre?>">
+                    <br>
+                    <br>
+                    <input class="form" id=guardar type="submit" value="Guardar">
 
-    </form>
-    <a href="?ctrl=CtrlOficina">Retornar</a>
+                    </form>
+                    <a href="?ctrl=CtrlOficina" class=button2>
+                    <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>
+                    Retornar</a>
+
+    </div>
 </body>
 </html>

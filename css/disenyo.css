@@ -1,5 +1,7 @@
 
-
+.modal::backdrop{
+background-color: rgba(0, 0, 0, 0.5);
+}
 .btn-primary{
     background-color: aqua;
 }
@@ -50,15 +52,7 @@
 
 }
 
-/*.barra
-{
-
-    left: 0;
-    width: 18%;
-    height: a;
-    top: 0;
-    background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
-}
+/*
 
 
 .cajaContenido
@@ -87,11 +81,12 @@
 
     width: 65%;
     background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
+    /*background-color: #4495fa;*/
     left: 22%;
     border-radius: 3vmax;
     padding-left: 3%;
     padding-right:25%;
-    padding-bottom: 18%;
+    padding-bottom: 30px;
     margin-left: 50px;
     margin-top: -30px;
     padding-top: 2%;
@@ -336,8 +331,18 @@ body::-webkit-scrollbar-thumb
     background-color: white;
     margin: 0;
     background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
+    /*background-color: #4495fa;*/
 }
 
+.interior
+{
+    height: 400px;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 136%;
+
+
+}
 .main
 {
     grid-area: main;
@@ -363,11 +368,14 @@ body::-webkit-scrollbar-thumb
 }
 .logo{
     grid-area: logo;
-    background-color: #4495fa;
+    background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
+    /*background-color: #4495fa;*/
 }
 .logotipo
 {
-    background: url(imagenesCSS/logolicenciado.png) no-repeat;
+    /*background: url(imagenesCSS/logolicenciado.png) no-repeat;*/
+    background: url(imagenesCSS/final.png) no-repeat;
+    background-size: contain;
     padding-bottom: 70%;
 }
 .gridContainer
@@ -445,6 +453,11 @@ body::-webkit-scrollbar-thumb
     border-radius: 6px;
     padding: 8px;
     margin-left: 5%;
+    
+}
+#at-largo
+{
+    width: 35%;
 }
 
 #guardar

@@ -84,16 +84,29 @@ class CtrlArea extends Controlador {
 
     }
 
-    /*public function filtrar(){
+  /*  public function resultado(){
         $obj = new Area();
-        $data = $obj->mostrar();
+        $data = $obj->getBy('idOficina', '2');
+        # var_dump($data);exit;
+        $datos = [
+            'titulo'=>'Areas',
+            'data'=>$data['data']
+        ];
+        $home = $this->mostrar('areas/mostrar.php',$datos,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+    }*/
+
+    public function metFiltro(){
         $objOficina = new Oficina;
         $dataOficina = $objOficina->mostrar();
-        $respuesta = $obj ->filtrado($id, $idOficina);
+        
+        
         $datos = [
-            'titulo'=>'Filtrar Areas',
-
-            'data'=>$data['data'],
+            
             'oficinas'=>$dataOficina['data']
         ];
         $home = $this->mostrar('areas/filtro.php',$datos,true);
@@ -102,27 +115,27 @@ class CtrlArea extends Controlador {
             'contenido'=>$home
         ];
         $this->mostrar('plantilla/home.php',$datos);
+        
     }
 
-    public function filtro(){
-        //$id = $_GET['id'];
-        $obj = new Area();
-        $data = $obj->mostrar();
-        
+    public function filtrar(){
+        $idOficina=$_POST['idOficina'];
+        $columna = 'idOficina';
+        $obj = new Area($idOficina);
+  
         $respuesta= $obj->filtrado();
-        $datos = [
+        # var_dump($data);exit;
 
 
-            'data'=>$data['data']
-            
-            
-        ];  
-        $home = $this->mostrar('areas/filtro.php',$datos,true);
+        /*$home = $this->mostrar('areas/mostrar.php',$datos,true);
+
         $datos = [
             'contenido'=>$home
         ];
         $this->mostrar('plantilla/home.php',$datos);
-        $orden = "SELECT *FROM v_areas WHERE id= $id OR idEquipo='idEquipo'";
-        return $orden;
-    }*/
+
+    */
+            $this->index();
+    }
+
 }

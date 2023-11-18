@@ -3,7 +3,7 @@ $id = isset($obj['id'])?$obj['id']:'';
 $nombre = isset($obj['nombre'])?$obj['nombre']:'';
 # var_dump($obj);exit;
 $esNuevo = isset($obj['id'])?0:1; #0: No es Nuevo (Editar) / 1: Es nuevo
-$titulo = ($esNuevo==1)?'Nueva Area':'Editar Area';
+$titulo = ($esNuevo==1)?'Nuevo Cargo':'Editar Cargo';
 ?>
 <div class="caja-form">
             <div class="titulo2">

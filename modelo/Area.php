@@ -8,10 +8,15 @@ class Area extends Modelo {
 
     private $_vista='v_areas';
 
-    public function __construct($id=null,$nombre=null,$idOficina=null){
+    private $columna;
+    private $valor;
+
+    public function __construct($id=null,$nombre=null,$idOficina=null, $columna=null, $valor=null){
         $this->id = $id;
         $this->nombre=$nombre;
         $this->idOficina=$idOficina;
+        $this->columna=$columna;
+        $this->valor=$valor;
         parent::__construct($this->_tabla);
     }
 
@@ -45,11 +50,12 @@ class Area extends Modelo {
     }
 
     public function filtrado(){
-        $columna ='idOficina';
         
-        $valor=[
-            "'$this->idOficina'"
-        ];
-        return $this->getBy($this->columna, $this->valor);
+        $valor =['idOficina'=>$this->idOficina];
+        
+        $columna = 'Nombre_Oficinas';
+
+        $this->setTabla($this->_vista);
+        return $this->getFiltro($columna, $valor);
     }
 }

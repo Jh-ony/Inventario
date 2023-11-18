@@ -18,8 +18,9 @@
 
     <div class="sesion">
 
-    <a href="#" class=perfil>
+    <a href="./login/login3.php" class=perfil>
     <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+    
     </a>
     </div>
 

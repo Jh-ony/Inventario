@@ -4,6 +4,9 @@
     </div>
 
     <div class="datos">
+    <a href="?"class=button>
+    <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>        
+    Retornar</a>
         <div class="interior">
 
 
@@ -47,9 +50,7 @@ foreach ($data as $d) {
 
     </table>
 
-    <a href="?"class=button>
-    <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>        
-    Retornar</a>
+
 
         </div>
     </div>

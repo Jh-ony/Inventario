@@ -12,24 +12,26 @@ $titulo = ($esNuevo==1)?'Nueva Marca':'Editando Marca';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    
 </head>
 <body>
-    <h1><?=$titulo?></h1>
-    <form action="?ctrl=CtrlMarcas&accion=guardar" method="post">
+            <div class="titulo2">
+            <h1><?=$titulo?></h1>
+            </div>
+            <form action="?ctrl=CtrlMarcas&accion=guardar" method="post">
 
-    id:
-    <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
-    <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
-    <br>
-    Marca:
-    <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
- <br>
- <br>
+            id:
+            <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
+            <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
+            <br>
+            Marca:
+            <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
+            <br>
+            <br>
 
-    <input class="form-control" type="submit" value="Guardar">
+            <input class="form-control" type="submit" value="Guardar">
 
-    </form>
-    <a href="?ctrl=CtrlMarcas">Retornar</a>
+            </form>
+            <a href="?ctrl=CtrlMarcas">Retornar</a>
 </body>
 </html>

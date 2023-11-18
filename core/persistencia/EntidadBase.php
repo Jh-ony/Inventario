@@ -7,7 +7,7 @@ class EntidadBase
     private $_colColumnas;
     private $_colWhere;
     private $_colOrderBy;
-
+    private $_vista;
     protected $_sql;
  
     public function __construct($tabla) {
@@ -39,7 +39,7 @@ class EntidadBase
      
     public function getBy($columna,$valor){
         $this->_sql->setTabla($this->_tabla);
-        $this->_sql->addWhere("`$columna`='$valor'");
+        $this->_sql->addWhere("`$columna`= '$valor'");
         return $this->_bd->ejecutar($this->_sql);
     }
      

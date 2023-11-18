@@ -22,6 +22,7 @@ class CtrlOficina extends Controlador {
     public function nuevo(){
         $home=$this->mostrar('oficinas/formulario.php',null,true);
         $datos = [
+           
             'contenido'=>$home
         ];
         $this->mostrar('plantilla/home.php',$datos);
@@ -36,6 +37,7 @@ class CtrlOficina extends Controlador {
         ];
         $home=$this->mostrar('oficinas/formulario.php',$datos,true);
         $datos = [
+       
             'contenido'=>$home
         ];
         $this->mostrar('plantilla/home.php',$datos);

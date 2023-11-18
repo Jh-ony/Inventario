@@ -53,7 +53,7 @@ $titulo = ($esNuevo==1)?'Nueva Area':'Editar Area';
                 <?php } ?>
             </select>
 
-            
+                    
             
             <br>
             <br>
