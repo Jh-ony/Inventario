@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+ <!-- <aside class="main-sidebar sidebar-dark-primary elevation-4">-->
     <!-- Brand Logo -->
     <!--<a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -41,40 +41,42 @@
               <!--<p>
                 Dashboard
                 <i class="right fas fa-angle-left"></i>
-              </p>-->
-            </a>
+              </p>
+            </a>-->
             
-            <ul class="nav nav-treeview">
+            
                     <div class="contside">
                     
-                    <table class=side-tabla>
+                    <div class=side-tabla>
                     <?php
                         if (isset($_SESSION['menu']))
                         foreach ($_SESSION['menu'] as $key => $value) {
                             ?>
                             
-                            <tr>
-                              <td class=sides>
-                                <a href="?ctrl=<?=$key?>" class=button id=sider>
-                                <!--<i class="far fa-circle nav-icon"></i>-->
+                            
+                              <div class=sides>
+                                  
+                                <a href="?ctrl=<?=$key?>" class=button >
+                                
                                 <p><?=$value?></p>
                             </a>
                             
-                            </td>
                             
-                            </tr>
+                            </div>
+                            
+                            
                             
                             <?php
                         }
                     ?>
-                    </table>
+                    </div>
                     </div>              
-            </ul>
-          </li>
+            
+          <!--</li>-->
           
         <!--</ul>-->
-      </nav>
+      <!--</nav>-->
       <!-- /.sidebar-menu -->
-    </div>
+    <!--</div>-->
     <!-- /.sidebar -->
-  </aside>
+  <!--</aside>-->

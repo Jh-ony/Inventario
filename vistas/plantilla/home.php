@@ -47,7 +47,7 @@
                 <?php
                 require_once './vistas/plantilla/aside.php';
                 ?>
-                </div>
+                
             </div>
         </aside>
 

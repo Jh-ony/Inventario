@@ -19,15 +19,28 @@
                     <th>Oficina</th>
                     <th>Nombre</th>
                     <th class=noColor>
-                        <button type="button" ></button>
-                        <button >abrir</button>
-                        <dialog class=modal id=mainModal>
-                        <a href="?ctrl=CtrlArea&accion=nuevo" class=button id=nuevo>
-                        <i class="fa-solid fa-plus" style="color: #000000;"></i>
-                    </a>
-                    <button onclick="closeModal()">cerrar</button>
-                        </dialog>
-                        <script src="aaa.js"></script>
+                    <!--Boton
+                    <div class="boton-modal">
+                        <label for="btn-modal">Abrir modal</label>
+
+                    </div>
+
+                    contenido del modal
+                    <input type="checkbox" id="btn-modal">
+                    <div class="contenedor-modal">
+                        <div class="contenido-modal">
+                            -->
+                            <a href="?ctrl=CtrlArea&accion=nuevo" class=button id=nuevo>
+                            <i class="fa-solid fa-plus" style="color: #000000;"></i>
+                            </a>
+                            <!-- <div class="btn-cerrar">
+                            <label for="btn-modal">Cerrar</label>
+                           </div>
+                        </div>
+                        <label for="btn-modal" class="cerrar-modal"></label>-->
+                    </div>
+                        
+
                 </th>
 
                 </tr>
@@ -56,6 +69,8 @@
                 <a href="?ctrl=CtrlArea&accion=editar&id=<?=$d['id']?>" class=button id=editar>
                 <i class="fa-regular fa-pen-to-square" style="color: #0fc5d2;"></i>
                 </a>
+
+                    
                 <a href="?ctrl=CtrlArea&accion=eliminar&id=<?=$d['id']?>" class=button id=eliminar>
                 <i class="fa-regular fa-trash-can" style="color: #ffffff;">
                 </i></a>

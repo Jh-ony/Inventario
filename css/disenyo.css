@@ -29,10 +29,7 @@ background-color: rgba(0, 0, 0, 0.5);
 {
     background-color: red;
     border-radius: 50%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding: 4px 7px;
 
     font-size: larger;
     color: white ;
@@ -94,6 +91,12 @@ background-color: rgba(0, 0, 0, 0.5);
  
 }
 
+.tabla-larga{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
 .inventario
 {
     background: url(imagenesCSS/final.png) no-repeat;
@@ -112,7 +115,7 @@ background-color: rgba(0, 0, 0, 0.5);
 
 .tabla
 {
-    width: 85%;
+    width: 90%;
     border-collapse: separate;
     border-spacing: 10px;
 
@@ -160,7 +163,7 @@ td{
     font-size: medium;
     text-transform: uppercase;
     
-    margin-left: -15%;
+    
     width: 100%;
 
 
@@ -178,35 +181,34 @@ td{
     background-color: #73d5ff;
     border-style: none;
     text-align: left;
-    padding: 0px;
-    padding-left: 20px;
-    padding-right: 15px;
+    padding: 0.8px;
     border-radius: 2vmin;
-    margin-bottom: 10px;
-
-    border:solid transparent; 
-
-
- 
-}
-
-#sider
-{
-    background-color: white;
-
-    /*background-color: #73d5ff;*/
+    margin-bottom: 15px;
+    padding-left:20px;
 
 }
 
-/*@media (hover:hover){
-    .sides :hover
+/*.as{
+
+    padding: 1px 100%;
+    background-color: red;
+    text-decoration: none;
+    color: black;
+    border-radius: 3vmin;
+}
+*/
+
+
+
+@media (hover:hover){
+    .sides:hover
     {
-        background-color: #4495fa; 
+        background-color: rgb(69, 152, 253)
 
 
 
     }
-    }*/
+    }
 
 
 
@@ -328,7 +330,7 @@ body::-webkit-scrollbar-thumb
 .sidebar
 {
     grid-area: sidebar;
-    background-color: white;
+    
     margin: 0;
     background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
     /*background-color: #4495fa;*/
@@ -495,4 +497,83 @@ body::-webkit-scrollbar-thumb
     margin-left: -72%;
 
 
+}
+
+
+
+/*Boton del modal*/
+/*.boton-modal{
+   
+    background-color: #fff;
+    width: 50%;
+}*/
+
+.boton-modal label {
+    padding: 10px 20px;
+    background-color: #5488e3;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+
+}
+
+.boton-modal label:hover{
+    background-color: blue;
+}
+
+#btn-modal {
+    display: none;
+}
+
+.contenedor-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(227, 234, 246, 0.667);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+}
+
+#btn-modal:checked ~ .contenedor-modal{
+    display: flex;   
+}
+.contenido-modal{
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.contenido-modal .btn-cerrar{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contenido-modal .btn-cerrar label{
+    padding: 7px 10px;
+    background-color: #5488e3;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.contenido-modal .btn-cerrar label:hover{
+    background-color: blue;
+}
+
+.cerrar-modal{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
 }
