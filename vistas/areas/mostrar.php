@@ -9,35 +9,39 @@
             <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>    
             Retornar</a>
             <div class="interior">
-               <!-- <div class="filtrado">
-                    <a href="?ctrl=CtrlArea&accion=metFiltro">Filtrar</a>
-                </div>-->
-            <!--<a href="?ctrl=CtrlArea&accion=filtrar">Filtrar</a>-->
-            <table class="tabla">
+                <!-- <div class="container-fluid">
+                    <form class="d-flex">
+                        <input type="text" class="form-control me-2 light-table-filter" data-table="table-id" placeholder="Escriba parametro de filtro">
+                    </form>
+                </div> -->
+                <a href="?ctrl=CtrlArea&accion=metFiltro" class=button id=metFiltro>
+                            Filtro
+                            </a>
+            <table class="tabla table-id">
                 <tr>
                     <th>ID</th>
                     <th>Oficina</th>
                     <th>Nombre</th>
                     <th class=noColor>
-                    <!--Boton
+                    <!-- Boton -->
                     <div class="boton-modal">
-                        <label for="btn-modal">Abrir modal</label>
+                        <label for="btn-modal">Modal de añadir</label>
 
                     </div>
 
-                    contenido del modal
+                    <!-- contenido del modal -->
                     <input type="checkbox" id="btn-modal">
                     <div class="contenedor-modal">
                         <div class="contenido-modal">
-                            -->
+                            
                             <a href="?ctrl=CtrlArea&accion=nuevo" class=button id=nuevo>
                             <i class="fa-solid fa-plus" style="color: #000000;"></i>
                             </a>
-                            <!-- <div class="btn-cerrar">
+                            <div class="btn-cerrar">
                             <label for="btn-modal">Cerrar</label>
                            </div>
                         </div>
-                        <label for="btn-modal" class="cerrar-modal"></label>-->
+                        <label for="btn-modal" class="cerrar-modal"></label>
                     </div>
                         
 
@@ -86,7 +90,7 @@
 
             </table>
 
-
+            <script src="./vistas/areas/busqueda.js"></script>
             </div>
         </div> 
 

@@ -119,23 +119,23 @@ class CtrlArea extends Controlador {
     }
 
     public function filtrar(){
-        $idOficina=$_POST['idOficina'];
+        $valor=$_POST['idOficina'];
         $columna = 'idOficina';
-        $obj = new Area($idOficina);
-  
-        $respuesta= $obj->filtrado();
+        $obj = new Area();
+        
+        $resultado= $obj->filtrado($columna, $valor);
         # var_dump($data);exit;
 
 
-        /*$home = $this->mostrar('areas/mostrar.php',$datos,true);
+        $home = $this->mostrar('areas/mostrar.php',$resultado,true);
 
         $datos = [
             'contenido'=>$home
         ];
         $this->mostrar('plantilla/home.php',$datos);
 
-    */
-            $this->index();
+  
+
     }
 
 }

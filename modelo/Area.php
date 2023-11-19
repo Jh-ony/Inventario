@@ -51,11 +51,11 @@ class Area extends Modelo {
 
     public function filtrado(){
         
-        $valor =['idOficina'=>$this->idOficina];
+        $valor =$_POST['idOficina'];
         
-        $columna = 'Nombre_Oficinas';
+        $columna ='idOficina';
 
         $this->setTabla($this->_vista);
-        return $this->getFiltro($columna, $valor);
+        return $this->getBy($columna, $valor);
     }
 }
