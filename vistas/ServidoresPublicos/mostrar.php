@@ -14,7 +14,7 @@
 
                 <div class="interior">
                 
-                <table class="tabla">
+                <table class="tabla-larga">
                     <tr>
                         <th>Nombre</th>
                         <th>Cargo</th>
