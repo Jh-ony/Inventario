@@ -12,17 +12,21 @@ class Perifericos extends Modelo{
     private $_tabla='perifericos';
     private $_vista='v_perifericos';
 
-    public function __construct($id=null,$idEstado=null,$nombre=null
-            ,$descripcion=null, $foto=null
-            ,$observaciones=null
+    public function __construct(
+            $id=null,
+            $idEstado=null,
+            $nombre=null,
+            $descripcion=null,
+            $foto=null,
+            $observaciones=null
             
             ){
-        $this->id = $id;
-        $this->idEstado = $idEstado;
+        $this->id=$id;
+        $this->idEstado=$idEstado;
         $this->nombre=$nombre;
-        $this->descripcion = $descripcion;
-        $this->foto = $foto;
-        $this->observaciones = $observaciones;
+        $this->descripcion=$descripcion;
+        $this->foto=$foto;
+        $this->observaciones=$observaciones;
 
 
 
@@ -39,19 +43,16 @@ class Perifericos extends Modelo{
 
     }
     public function guardar(){
-        //$this->setTabla($this->_tabla);
-        //parent::guardar();
+
         $data = [
-            'id'=>"$this->id",
-            'idEstados'=>"$this->idEstado",
-            'nombre'=>"$this->nombre",
-            'descripcion'=>"$this->descripcion",
-            'foto'=>"$this->foto",
-            'observaciones'=>"$this->observaciones",
+            'id'=>"'$this->id'",
+            'idEstado'=>"'$this->idEstado'",
+            'nombre'=>"'$this->nombre'",
+            'descripcion'=>"'$this->descripcion'",
+            'foto'=>"'$this->foto'",
+            'observaciones'=>"'$this->observaciones'",
         ];
-        //$this->setTabla('perifericos');
-    #echo "Siguiente: ". $this->idSiguiente;
-     #   exit;
+
         return $this->insert($data);
     }
     public function getRegistro(){
@@ -61,15 +62,15 @@ class Perifericos extends Modelo{
     public function actualizar(){
         //parent::actualizar();
         $datos = [
-            'id'=>"$this->id",
-            'idEstados'=>"$this->idEstado",
-            'nombre'=>"$this->nombre",
-            'descripcion'=>"$this->descripcion",
-            'foto'=>"$this->foto",
-            'observaciones'=>"$this->observaciones",
+            'id'=>"'$this->id'",
+            'idEstado'=>"'$this->idEstado'",
+            'nombre'=>"'$this->nombre'",
+            'descripcion'=>"'$this->descripcion'",
+            'foto'=>"'$this->foto'",
+            'observaciones'=>"'$this->observaciones'",
         ];
         //$this->setTabla('perifericos');
-        $wh = "id=$this->id";
+        $wh='id='.$this->id;
         return $this->update($wh,$datos);
     }
 }

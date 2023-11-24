@@ -3,7 +3,7 @@
             <h1><?=$titulo?></h1>
             </div>
             <div class="datos">
-            <a href="?" class=button>
+                    <a href="?ctrl=CtrlArea" class=button>
                      <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>
                      Retornar  </a>
                 <div class="interior">

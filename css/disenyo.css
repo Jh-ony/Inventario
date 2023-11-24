@@ -12,8 +12,9 @@ background-color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     color:rgb(45, 45, 45);
 
-
 }
+
+
 #nuevo
 {
     border-style: solid;
@@ -87,6 +88,7 @@ background-color: rgba(0, 0, 0, 0.5);
     margin-left: 50px;
     margin-top: -30px;
     padding-top: 2%;
+
 
  
 }
@@ -479,14 +481,12 @@ body::-webkit-scrollbar-thumb
 
 .caja-form
 {
-    margin-top: -25px;
-    border-style: solid;
-    border-radius: 3vmax;
-    margin-left: 25%;
-    width: 40%;
+   
+
+   
     text-align: center;
-    padding-bottom: 20px;
-    box-shadow: 10px 10px 40px;
+   
+  
 }
 
 .button2
@@ -577,3 +577,62 @@ body::-webkit-scrollbar-thumb
     top: 0; left: 0;
     z-index: -1;
 }
+
+
+
+/* --Selectores de PC-- */
+/* .datosPC
+{
+
+    width: 65%;
+    background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
+background-color: #4495fa;
+    left: 22%;
+    border-radius: 3vmax;
+    padding-left: 3%;
+    padding-right:25%;
+    padding-bottom: 30px;
+    margin-left: 50px;
+    margin-top: -30px;
+    padding-top: 2%; 
+    
+
+ 
+}
+*/
+
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+#almacen{
+    background-color: #e9110d;
+    padding: 10%;
+    margin: 5%;
+    border-radius: 4vmin;
+    
+}
+
+#uso{
+    background-color: #0ae43d;
+    padding: 10%;
+    margin: 5%;
+    border-radius: 4vmin;
+}
+
+
+#uso:hover{
+    background-color: #00ff1a;
+    box-shadow: 1px 1px 10px;
+}
+
+#almacen:hover{
+    background-color: #ff3300;
+    box-shadow: 1px 1px 10px;
+}
+

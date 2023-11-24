@@ -20,6 +20,26 @@ class CtrlArea extends Controlador {
         ];
         $this->mostrar('plantilla/home.php',$datos);
     }
+
+// Mostrar Oficina
+
+public function mostrarOficina(){
+    $obj = new Oficina();
+    $data = $obj->mostrar();
+    # var_dump($data);exit;
+    $datos = [
+        'titulo'=>'Oficinas',
+        'data'=>$data['data']
+    ];
+    $home=$this->mostrar('oficinas/mostrar.php',$datos,true);
+    $datos = [
+        'contenido'=>$home
+    ];
+    $this->mostrar('plantilla/home.php',$datos);
+
+}
+
+
     public function nuevo(){
         $objOficina = new Oficina;
         $data = $objOficina->mostrar();
@@ -38,7 +58,7 @@ class CtrlArea extends Controlador {
         $id = $_GET['id'];
         $obj = new Area($id);
         $data = $obj->getRegistro();
-
+        // var_dump($data);exit;
         $objOficina = new Oficina;
         $dataOficina = $objOficina->mostrar();
         
@@ -84,9 +104,9 @@ class CtrlArea extends Controlador {
 
     }
 
-  /*  public function resultado(){
+    public function index2(){
         $obj = new Area();
-        $data = $obj->getBy('idOficina', '2');
+        $data = $obj->mostrar();
         # var_dump($data);exit;
         $datos = [
             'titulo'=>'Areas',
@@ -98,7 +118,7 @@ class CtrlArea extends Controlador {
             'contenido'=>$home
         ];
         $this->mostrar('plantilla/home.php',$datos);
-    }*/
+    }
 
     public function metFiltro(){
         $objOficina = new Oficina;
@@ -135,7 +155,7 @@ class CtrlArea extends Controlador {
         $this->mostrar('plantilla/home.php',$datos);
 
   
-
+        
     }
 
 }

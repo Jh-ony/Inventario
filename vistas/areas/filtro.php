@@ -1,7 +1,10 @@
 <form action="?ctrl=CtrlArea&accion=filtrar" method="post">
 
     Filtrar Oficina
-    <select class="form" name="idOficina">
+
+
+
+     <select class="form" name="idOficina">
                 <?php
                 if (is_array($oficinas))
                 foreach ($oficinas as $o) {
@@ -12,7 +15,7 @@
                     <?=$o['nombre']?>
                 </option>
                 <?php } ?>
-            </select>
+            </select> 
 
             <input type="submit" value="Filtrar">
 </form>

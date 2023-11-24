@@ -1,23 +1,23 @@
 <?php
-$id = isset($obj['$id'])?$obj['$id']:'';
-$idTipoProcesador = isset($obj['$idTipoProcesador'])?$obj['$idTipoProcesador']:'';
-$detallesSO = isset($obj['$detallesSO'])?$obj['$detallesSO']:'';
-$idSO = isset($obj['$idSO'])?$obj['$idSO']:'';
-$detallesTipoProcesador = isset($obj['$detallesTipoProcesador'])?$obj['$detallesTipoProcesador']:'';
-$idEstado = isset($obj['$idEstado'])?$obj['$idEstado']:'';
-$idFactorForma = isset($obj['$idFactorForma'])?$obj['$idFactorForma']:'';
-$detallesFactorForma = isset($obj['$detallesFactorForma'])?$obj['$detallesFactorForma']:'';
-$observaciones = isset($obj['$observaciones'])?$obj['$observaciones']:'';
-$direccionIP = isset($obj['$direccionIP'])?$obj['$direccionIP']:'';
-$mascaraRed = isset($obj['$mascaraRed'])?$obj['$mascaraRed']:'';
-$PuertaEnlace = isset($obj['$PuertaEnlace'])?$obj['$PuertaEnlace']:'';
-$DNS1 = isset($obj['$DNS1'])?$obj['$DNS1']:'';
-$DNS2 = isset($obj['$DNS2'])?$obj['$DNS2']:'';
-$numeroSerie = isset($obj['$numeroSerie'])?$obj['$numeroSerie']:'';
-$nombresPC = isset($obj['$nombresPC'])?$obj['$nombresPC']:'';
-$usuarioPC = isset($obj['$usuarioPC'])?$obj['$usuarioPC']:'';
-$clavePC = isset($obj['$clavePC'])?$obj['$clavePC']:'';
-$foto = isset($obj['$foto'])?$obj['$foto']:'';
+$id = isset($obj['id'])?$obj['id']:'';
+$idTipoProcesador = isset($obj['idTipoProcesador'])?$obj['idTipoProcesador']:'';
+$detallesSO = isset($obj['detallesSO'])?$obj['detallesSO']:'';
+$idSO = isset($obj['idSO'])?$obj['idSO']:'';
+$detallesTipoProcesador = isset($obj['detallesTipoProcesador'])?$obj['detallesTipoProcesador']:'';
+$idEstado = isset($obj['idEstado'])?$obj['idEstado']:'';
+$idFactorForma = isset($obj['idFactorForma'])?$obj['idFactorForma']:'';
+$detallesFactorForma = isset($obj['detallesFactorForma'])?$obj['detallesFactorForma']:'';
+$observaciones = isset($obj['observaciones'])?$obj['observaciones']:'';
+$direccionIP = isset($obj['direccionIP'])?$obj['direccionIP']:'';
+$mascaraRed = isset($obj['mascaraRed'])?$obj['mascaraRed']:'';
+$PuertaEnlace = isset($obj['PuertaEnlace'])?$obj['PuertaEnlace']:'';
+$DNS1 = isset($obj['DNS1'])?$obj['DNS1']:'';
+$DNS2 = isset($obj['DNS2'])?$obj['DNS2']:'';
+$numeroSerie = isset($obj['numeroSerie'])?$obj['numeroSerie']:'';
+$nombresPC = isset($obj['nombrePC'])?$obj['nombrePC']:'';
+$usuarioPC = isset($obj['usuarioPC'])?$obj['usuarioPC']:'';
+$clavePC = isset($obj['clavePC'])?$obj['clavePC']:'';
+$foto = isset($obj['foto'])?$obj['foto']:'';
 
 
 # var_dump($obj);exit;

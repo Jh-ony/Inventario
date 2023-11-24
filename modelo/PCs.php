@@ -1,6 +1,5 @@
 <?php
 require_once './core/Modelo.php';
-
 class PCs extends Modelo {
     private $id;
     private $nombrePC;
@@ -23,8 +22,9 @@ class PCs extends Modelo {
     private $foto;
 
     private $_tabla='PCs';
-    private $_vista= 'v_pcs';
-    
+    private $_vista='v_pcs';
+    private $_vistaUso='v_pcs_en_uso';
+    private $_vistaAlmcn='v_pcs_almacen';
     public function __construct(
         $id=null,
         $nombrePC=null,
@@ -45,37 +45,48 @@ class PCs extends Modelo {
         $DNS2=null,
         $numeroSerie=null,
         $foto=null
-        )
-
-        {
-            $this->id = $id;
-        $this->nombrePC = $nombrePC;
-        $this->usuarioPC=$usuarioPC;
-        $this->clavePC=$clavePC;
+        ){
+        $this->id = $id;
         $this->idTipoProcesador=$idTipoProcesador;
-        $this->detallesTipoProcesador=$detallesTipoProcesador;
-        $this->idSO=$idSO;
         $this->detallesSO=$detallesSO;
+        $this->idSO=$idSO;
+        $this->detallesTipoProcesador=$detallesTipoProcesador;
         $this->idEstado=$idEstado;
         $this->idFactorForma=$idFactorForma;
         $this->detallesFactorForma=$detallesFactorForma;
         $this->observaciones=$observaciones;
         $this->direccionIP=$direccionIP;
-        $this->mascaraRed=$mascaraRed;
-        $this->PuertaEnlace = $PuertaEnlace;
-        $this->DNS1= $DNS1;
-        $this->DNS2= $DNS2;
-        $this->numeroSerie= $numeroSerie;
-        $this->foto = $foto;
-
+        $this->mascaraReed=$mascaraRed;
+        $this->PuertaEnlace=$PuertaEnlace;
+        $this->DNS1=$DNS1;
+        $this->DNS2=$DNS2;
+        $this->numeroSerie=$numeroSerie;
+        $this->nombrePC=$nombrePC;
+        $this->usuarioPC=$usuarioPC;
+        $this->clavePC=$clavePC;
+        $this->foto=$foto;
+      
         parent::__construct($this->_tabla);
     }
 
+    public function mostrarUso(){
+        $this->setTabla($this->_vistaUso);
+        return $this->getAll();
+    }
+    public function mostrarAlmcn(){
+        $this->setTabla($this->_vistaAlmcn);
+        return $this->getAll();
+    }
     public function mostrar(){
-        $this->setTabla($this->_vista);
         return $this->getAll();
     }
     public function getRegistro(){
+
+        return $this->getById($this->id);
+    }
+
+    public function getDetalles(){
+        $this->setTabla($this->_vista);
         return $this->getById($this->id);
     }
     public function guardar(){
@@ -99,11 +110,10 @@ class PCs extends Modelo {
             'DNS2'=>"'$this->DNS2'",
             'numeroSerie'=>"'$this->numeroSerie'",
             'foto'=>"'$this->foto'"
-
-
         ];
         return $this->insert($data);
     }
+    
     public function actualizar(){
         $data=[
             'id'=>"'$this->id'",
@@ -112,7 +122,7 @@ class PCs extends Modelo {
             'clavePC'=>"'$this->clavePC'",
             'idTipoProcesador'=>"'$this->idTipoProcesador'",
             'detallesTipoProcesador'=>"'$this->detallesTipoProcesador'",
-            'SO'=>"'$this->idSO'",
+            'idSO'=>"'$this->idSO'",
             'detallesSO'=>"'$this->detallesSO'",
             'idEstado'=>"'$this->idEstado'",
             'idFactorForma'=>"'$this->idFactorForma'",
@@ -125,7 +135,6 @@ class PCs extends Modelo {
             'DNS2'=>"'$this->DNS2'",
             'numeroSerie'=>"'$this->numeroSerie'",
             'foto'=>"'$this->foto'"
-            
         ];
         $wh = 'id='.$this->id;
         return $this->update($wh, $data);
@@ -133,6 +142,5 @@ class PCs extends Modelo {
     public function eliminar(){
         return $this->deleteById($this->id);
     }
-}
 
-?>
+}

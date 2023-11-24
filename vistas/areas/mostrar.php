@@ -1,11 +1,11 @@
 <div class="contenido">
 
     <div class="titulo">
-    <h1><?=$titulo?></h1>
+    <h1>Areas</h1>
     </div>
         <div class="datos">
 
-        <a href="?" class=button>
+            <a href="?" class=button>
             <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>    
             Retornar</a>
             <div class="interior">
@@ -14,6 +14,10 @@
                         <input type="text" class="form-control me-2 light-table-filter" data-table="table-id" placeholder="Escriba parametro de filtro">
                     </form>
                 </div> -->
+
+                <div class="oficina">
+                   <a href="?ctrl=CtrlOficina" class="button right">Ver Oficinas</a> 
+                </div>
                 <a href="?ctrl=CtrlArea&accion=metFiltro" class=button id=metFiltro>
                             Filtro
                             </a>

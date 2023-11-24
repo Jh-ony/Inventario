@@ -30,7 +30,7 @@ class CtrlPrincipal extends Controlador {
         return [
             'CtrlArea'=>'Areas',
             'CtrlCargo'=>'Cargos',
-            'CtrlOficina'=>'Oficinas',
+            // 'CtrlOficina'=>'Oficinas',
             'CtrlFactorForma'=>'Factores de Forma',
             'CtrlProgramaEstudio'=>'Programas de Estudios',
             //'CtrlEstudiante'=>'Estudiantes',

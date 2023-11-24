@@ -28,17 +28,17 @@ class CtrlPerifericos extends Controlador {
     public function eliminar(){
         $id = $_GET['id'];
         # echo "eliminando: ".$id;
-        $obj =new Perifericos ($id);
+        $obj =new Perifericos($id);
         $obj->eliminar();
 
         $this->index();
     }
     public function nuevo(){
         # echo "Agregando..";
-        $objEquipos = new Equipos;
-        $objEstados = new Estados;
-        $dataEquipos = $objEquipos->mostrar();
-        $dataEstados= $objEstados->mostrar();
+        $objEquipos=new Equipos;
+        $objEstados=new Estados;
+        $dataEquipos=$objEquipos->mostrar();
+        $dataEstados=$objEstados->mostrar();
         $datos= [
             
             'equipo'=>$dataEquipos['data'],
@@ -46,13 +46,6 @@ class CtrlPerifericos extends Controlador {
             
         ];
 
-        /*$obj = new Estados;
-        $estado = $obj->mostrar();
-        $datos= [
-            'titulo'=>'Nuevo Periferico',
-            'estado'=>$estado['data'],
-            
-        ];*/
         $home = $this->mostrar('Perifericos/formulario.php',$datos,true);
 
         $datos = [

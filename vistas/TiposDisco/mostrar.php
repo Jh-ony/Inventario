@@ -35,10 +35,10 @@
                     <td class=noColor>
                     
 
-                    <a href="?ctrl=CtrTiposDiscos&accion=editar&id=<?=$d['id']?>" class=button id=editar>
+                    <a href="?ctrl=CtrlTiposDisco&accion=editar&id=<?=$d['id']?>" class=button id=editar>
                     <i class="fa-regular fa-pen-to-square" style="color: #0fc5d2;"></i>
                     </a>
-                    <a href="?ctrl=CtrTiposDiscos&accion=eliminar&id=<?=$d['id']?>" class=button id=eliminar>
+                    <a href="?ctrl=CtrlTiposDisco&accion=eliminar&id=<?=$d['id']?>" class=button id=eliminar>
                     <i class="fa-regular fa-trash-can" style="color: #ffffff;">
                     </i></a>
                         

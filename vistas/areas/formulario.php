@@ -25,7 +25,7 @@ $titulo = ($esNuevo==1)?'Nueva Area':'Editar Area';
             ID
             </div>
             <br>
-            <input class="form" type="text" name="id" value="<?=$id?>" readonly>
+            <input class="form" type="text" placeholder="Este campo es automatico" name="id" value="<?=$id?>" readonly>
             <input class="form" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
             <br><br>
             <div class="atributo">
@@ -40,7 +40,7 @@ $titulo = ($esNuevo==1)?'Nueva Area':'Editar Area';
             Oficina
             </div>
             <br>
-            <select class="form" name="idOficina" id="">
+            <select class="form" name="idOficina">
                 <?php
                 if (is_array($oficinas))
                 foreach ($oficinas as $o) {

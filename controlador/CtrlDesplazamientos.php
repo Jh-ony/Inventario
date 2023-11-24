@@ -23,10 +23,10 @@ class CtrlDesplazamientos extends Controlador {
     }
     public function nuevo(){
         
-        $objSeOrigen = new ServidoresPublicos;
-        $objSeDestino = new ServidoresPublicos;
-        $dataSeOrigen = $objSeOrigen->mostrar();
-        $dataSeDestino = $objSeDestino->mostrar();
+        $obj= new ServidoresPublicos;
+        
+        $dataSeOrigen = $obj->mostrar();
+        $dataSeDestino = $obj->mostrar();
         $datos = [
 
                 'seOrigen'=>$dataSeOrigen['data'],
@@ -42,14 +42,14 @@ class CtrlDesplazamientos extends Controlador {
         $this->mostrar('plantilla/home.php',$datos);
     }
     public function editar(){
-        $id = $_GET['id'];
-        $obj = new Desplazamientos($id);
-        $data = $obj->getRegistro();
+        $id=$_GET['id'];
+        $obj=new Desplazamientos($id);
+        $data=$obj->getRegistro();
         
-        $objSeOrigen = new ServidoresPublicos;
-        $objSeDestino = new ServidoresPublicos;
-        $dataSeOrigen = $objSeOrigen->mostrar();
-        $dataSeDestino = $objSeDestino->mostrar();
+        $obj= new ServidoresPublicos;
+        
+        $dataSeOrigen = $obj->mostrar();
+        $dataSeDestino = $obj->mostrar();
 
 
         $datos = [
