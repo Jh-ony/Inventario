@@ -9,7 +9,7 @@ class ServidoresPublicos extends Modelo {
     private $fecha_fin;
     private $_tabla='servidores_Publicos';
 
-    private $_vista='v_servidoresPublicos';
+    private $_vista='v_servidores_Publicos';
 
     public function __construct($id=null,$idCargo=null,$idArea=null,
     $idOficina=null,$fecha_inicio=null,$fecha_fin=null){
@@ -24,7 +24,7 @@ class ServidoresPublicos extends Modelo {
 
     public function mostrar(){
 
-        $this->setTabla($this->_tabla);
+        $this->setTabla($this->_vista);
 
         return $this->getAll();
     }

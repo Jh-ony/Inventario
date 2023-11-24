@@ -15,24 +15,42 @@ $titulo = ($esNuevo==1)?'Nuevo Servidor Publico':'Editar Servidor Publico';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    
 </head>
 <body>
+<div class="caja-form">
+    <div class="titulo2">
     <h1><?=$titulo?></h1>
+    </div>
     <form action="?ctrl=CtrlServidoresPublicos&accion=guardar" method="post">
 
-    id:
-    <input class="form-control" type="text" name="id" value="<?=$id?>">
-    <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
+    <div class="atributo">
+    ID
+    </div>
     <br>
-    fecha_inicio:
-    <input class="form-control" type="date" name="fecha_inicio" value="<?=$fecha_inicio?>">
+    <input class="form" type="text" name="id" value="<?=$id?>">
+    <input class="form" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
     <br>
-    fecha_fin:
-    <input class="form-control" type="date" name="fecha_fin" value="<?=$fecha_fin?>">
     <br>
-    Cargo:
-    <select class="form-control" name="idCargo" id="">
+    <div class="atributo">
+    Fecha_inicio
+    </div>
+    <br>
+    <input class="form" type="date" name="fecha_inicio" value="<?=$fecha_inicio?>">
+    <br>
+    <br>
+    <div class="atributo">
+    Fecha_fin
+    </div>
+    <br>
+    <input class="form" type="date" name="fecha_fin" value="<?=$fecha_fin?>">
+    <br>
+    <br>
+    <div class="atributo">
+    Cargo
+    </div>
+    <br>
+    <select class="form" name="idCargo" id="">
         <?php
         if (is_array($Cargo))
         foreach ($Cargo as $c) {
@@ -45,8 +63,13 @@ $titulo = ($esNuevo==1)?'Nuevo Servidor Publico':'Editar Servidor Publico';
         <?php } ?>
     </select>
     <br>
-    Area:
-    <select class="form-control" name="idArea" id="">
+    <br>
+    <div class="atributo">
+    Area
+    </div>
+    <br>
+    
+    <select class="form" name="idArea" id="">
         <?php
         if (is_array($Area))
         foreach ($Area as $a) {
@@ -59,8 +82,12 @@ $titulo = ($esNuevo==1)?'Nuevo Servidor Publico':'Editar Servidor Publico';
         <?php } ?>
     </select>
     <br>
-    Oficina:
-    <select class="form-control" name="idOficina" id="">
+    <br>
+    <div class="atributo">
+    Oficina
+    </div>
+    <br>    
+    <select class="form" name="idOficina" id="">
         <?php
         if (is_array($Oficina))
         foreach ($Oficina as $o) {
@@ -73,14 +100,19 @@ $titulo = ($esNuevo==1)?'Nuevo Servidor Publico':'Editar Servidor Publico';
         <?php } ?>
     </select>
     <br>
+    <br>
     
 
     
 
     <br>
-    <input class="form-control" type="submit" value="Guardar">
+    <input class="form" id=guardar type="submit" value="Guardar">
 
     </form>
-    <a href="?ctrl=CtrlServidoresPublicos">Retornar</a>
+    <a href="?ctrl=CtrlServidoresPublicos" class=button2>
+            <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i> 
+            Retornar</a>
+
+    </div>
 </body>
 </html>
