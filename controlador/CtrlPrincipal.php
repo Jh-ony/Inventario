@@ -33,7 +33,7 @@ class CtrlPrincipal extends Controlador {
             // 'CtrlOficina'=>'Oficinas',
             'CtrlFactorForma'=>'Factores de Forma',
             'CtrlProgramaEstudio'=>'Programas de Estudios',
-            //'CtrlEstudiante'=>'Estudiantes',
+            // 'CtrlEstudiante'=>'Estudiantes',
             'CtrlSistemasOperativos' =>'Sistema Operativo',
             'CtrlMarcas'=>'Marcas',
             'CtrlModelos'=>'Modelos',

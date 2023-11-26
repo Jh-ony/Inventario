@@ -5,6 +5,7 @@
 
 
      <select class="form" name="idOficina">
+        <option>*Seleccione Oficna</option>
                 <?php
                 if (is_array($oficinas))
                 foreach ($oficinas as $o) {

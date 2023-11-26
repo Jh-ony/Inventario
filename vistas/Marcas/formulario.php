@@ -15,23 +15,37 @@ $titulo = ($esNuevo==1)?'Nueva Marca':'Editando Marca';
     
 </head>
 <body>
+
+<div class="caja-form">
             <div class="titulo2">
             <h1><?=$titulo?></h1>
             </div>
             <form action="?ctrl=CtrlMarcas&accion=guardar" method="post">
 
-            id:
-            <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
-            <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
+            <div class="atributo">
+            ID
+            </div>
             <br>
-            Marca:
-            <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
+            <input class="form" type="text" name="id" value="<?=$id?>" readonly>
+            <input class="form" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
+            <br>
+            <br>
+            <div class="atributo">
+            Marca
+            </div>
+            <br>
+            <input class="form" type="text" name="nombre" value="<?=$nombre?>">
             <br>
             <br>
 
-            <input class="form-control" type="submit" value="Guardar">
+            <input class="form" type="submit" id="guardar" value="Guardar">
 
             </form>
-            <a href="?ctrl=CtrlMarcas">Retornar</a>
+            <br>
+            <a href="?ctrl=CtrlMarcas" class=button2>
+            <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>     
+            Retornar</a>
+
+</div>
 </body>
 </html>

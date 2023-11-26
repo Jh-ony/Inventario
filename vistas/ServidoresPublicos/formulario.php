@@ -88,7 +88,9 @@ $titulo = ($esNuevo==1)?'Nuevo Servidor Publico':'Editar Servidor Publico';
     </div>
     <br>    
     <select class="form" name="idOficina" id="">
+
         <?php
+        
         if (is_array($Oficina))
         foreach ($Oficina as $o) {
             

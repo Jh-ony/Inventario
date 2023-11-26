@@ -125,7 +125,7 @@ background-color: rgba(0, 0, 0, 0.5);
 
 }
 
-th
+.tabla th
 {
 
    background-color: #73d5ff;
@@ -143,7 +143,7 @@ th
 
 }
 
-td{
+.tabla td{
     font-size: medium;
     border-spacing: 12px;
     background-color: white;
@@ -466,10 +466,14 @@ body::-webkit-scrollbar-thumb
 
 #guardar
 {
-    background-color: lime;
+    background-color: #00ff62;
     border-style: none;
     width: 25%;
 ;
+}
+
+#guardar:hover{
+    background-color:#85ff7a;
 }
 
 .titulo2
@@ -580,26 +584,7 @@ body::-webkit-scrollbar-thumb
 
 
 
-/* --Selectores de PC-- */
-/* .datosPC
-{
-
-    width: 65%;
-    background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
-background-color: #4495fa;
-    left: 22%;
-    border-radius: 3vmax;
-    padding-left: 3%;
-    padding-right:25%;
-    padding-bottom: 30px;
-    margin-left: 50px;
-    margin-top: -30px;
-    padding-top: 2%; 
-    
-
- 
-}
-*/
+/* --Exclusivo de PC-- */
 
 .botones{
     display: flex;
@@ -636,3 +621,51 @@ background-color: #4495fa;
     box-shadow: 1px 1px 10px;
 }
 
+#primeraOp{
+    color: #0ae43d;
+}
+
+    /* --Detalles de PC-- */
+
+.datosPC{
+    
+    width: 72%;
+    background: linear-gradient(90deg, rgb(71, 183, 243), rgb(67, 99, 243));
+    /*background-color: #4495fa;*/
+    left: 22%;
+    border-radius: 2vmin;
+    padding-left: 3%;
+    padding-right:25%;
+    padding-bottom: 1%;
+   margin-bottom: -15px;
+    margin-top: -30px;
+    padding-top: 2%;
+
+
+}
+
+.interior-pc{
+    margin-left: -20px;
+    margin-top: -10px;
+    height: 560px;
+    width: 135%;
+    
+}
+
+.tabla-pc th{
+    background-color:#292929;
+    color: white;
+    border-radius: 5px;
+    font-size:medium;
+    padding: 2px 3px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.tabla-pc td{
+    background-color:#292929;
+    color: white;
+    border-radius: 5px;
+    font-size:medium;
+    padding: 2px 3px;
+    font-family: 'Franklin Gothic Demi Bold';
+}

@@ -41,6 +41,7 @@ $titulo = ($esNuevo==1)?'Nueva Area':'Editar Area';
             </div>
             <br>
             <select class="form" name="idOficina">
+                <option>*Seleccione Oficina</option>
                 <?php
                 if (is_array($oficinas))
                 foreach ($oficinas as $o) {

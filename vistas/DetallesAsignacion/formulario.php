@@ -14,55 +14,85 @@ $titulo = ($esNuevo==1)?'Nuevo Detalle Asignacion':'Editando Detalle Asignacion'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    
 </head>
 <body>
-    <h1><?=$titulo?></h1>
-    <form action="?ctrl=CtrlDetallesAsignacion&accion=guardar" method="post">
 
-    id:
-    <input class="form-control" type="text" name="id" value="<?=$id?>" readonly>
-    <input class="form-control" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
-    <br>
+<div class="caja-form">
+            <div class="titulo2">
+            <h1><?=$titulo?></h1>
+            </div>
+            <form action="?ctrl=CtrlDetallesAsignacion&accion=guardar" method="post">
 
-    ID Asignacion
-    <select class="form-control" name="idAsignacion"value >
-            <?php
-            if (is_array($asignacion))
-            foreach ($asignacion as $a) {
-                $selected = ($a['id']==$idAsignacion)?'selected':'';
-            ?>
-            <option value="<?=$a['id']?>" <?=$selected?>><?=$a['id']?></option>
-            <?php
-            }
-            ?>
-    </select>
-    <br>
-    ID Equipo
-    <select class="form-control" name="idEquipo"value >
-            <?php
-            if (is_array($equipos))
-            foreach ($equipos as $eq) {
-                $selected = ($eq['id']==$idEquipo)?'selected':'';
-            ?>
-            <option value="<?=$eq['id']?>" <?=$selected?>><?=$eq['id']?></option>
-            <?php
-            }
-            ?>
-    </select>
-    <br>
+            <div class="atributo">
+            ID
+            </div>
+            <br>
+            <input class="form" type="text" name="id" value="<?=$id?>" readonly>
+            <input class="form" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
+            <br>
+            <br>
 
-    Observacion:
-    <input class="form-control" type="text" name="observaciones" value="<?=$observaciones?>">
-    <br>
+            <div class="atributo">
+            Asignacion
+            </div>
+            <br>
+            <select class="form" name="idAsignacion"value >
+                    <?php
+                    if (is_array($asignacion))
+                    foreach ($asignacion as $a) {
+                        $selected = ($a['id']==$idAsignacion)?'selected':'';
+                    ?>
+                    <option value="<?=$a['id']?>" <?=$selected?>><?=$a['id']?></option>
+                    <?php
+                    }
+                    ?>
+            </select>
+            <br>
+            <br>
 
-    Cantidad
-    <input class="form-control" type="text" name="cantidad" value="<?=$cantidad?>">
-    <br>
-  
-    <input class="form-control" type="submit" value="Guardar">
+            <div class="atributo">
+            Equipo
+            </div>
+            <br>
+            <select class="form" name="idEquipo"value >
+                    <?php
+                    if (is_array($equipos))
+                    foreach ($equipos as $eq) {
+                        $selected = ($eq['id']==$idEquipo)?'selected':'';
+                    ?>
+                    <option value="<?=$eq['id']?>" <?=$selected?>><?=$eq['id']?></option>
+                    <?php
+                    }
+                    ?>
+            </select>
+            <br>
+            <br>
 
-    </form>
-    <a href="?ctrl=CtrlDetallesAsignacion">Retornar</a>
+            <div class="atributo">
+            Observaciones
+            </div>
+            <br>
+            <input class="form" type="text" name="observaciones" value="<?=$observaciones?>">
+            <br>
+            <br>
+
+            <div class="atributo">
+            Cantidad
+            </div>
+            <br>
+            <input class="form" type="text" name="cantidad" value="<?=$cantidad?>">
+            <br>
+            <br>
+        
+            <input class="form" type="submit" id="guardar" value="Guardar">
+
+            </form>
+            <br>
+            <a href="?ctrl=CtrlDetallesAsignacion" class=button2>
+            <i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>     
+            Retornar</a>
+
+</div>
 </body>
 </html>

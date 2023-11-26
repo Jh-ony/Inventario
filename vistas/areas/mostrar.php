@@ -21,35 +21,18 @@
                 <a href="?ctrl=CtrlArea&accion=metFiltro" class=button id=metFiltro>
                             Filtro
                             </a>
-            <table class="tabla table-id">
+            <table class="tabla">
                 <tr>
                     <th>ID</th>
                     <th>Oficina</th>
                     <th>Nombre</th>
                     <th class=noColor>
-                    <!-- Boton -->
-                    <div class="boton-modal">
-                        <label for="btn-modal">Modal de añadir</label>
-
-                    </div>
-
-                    <!-- contenido del modal -->
-                    <input type="checkbox" id="btn-modal">
-                    <div class="contenedor-modal">
-                        <div class="contenido-modal">
-                            
+                    <!-- Agregar -->
+                    
                             <a href="?ctrl=CtrlArea&accion=nuevo" class=button id=nuevo>
                             <i class="fa-solid fa-plus" style="color: #000000;"></i>
                             </a>
-                            <div class="btn-cerrar">
-                            <label for="btn-modal">Cerrar</label>
-                           </div>
-                        </div>
-                        <label for="btn-modal" class="cerrar-modal"></label>
-                    </div>
-                        
-
-                </th>
+                    </th>
 
                 </tr>
                 

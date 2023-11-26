@@ -11,7 +11,7 @@ class CtrlDetallesAsignacion extends Controlador {
         $data = $obj->mostrar();
         # var_dump($data);exit;
         $datos = [
-            'titulo'=>'DetallesAsignacion',
+            'titulo'=>'Detalles Asignacion',
             'data'=>$data['data']
         ];
 
