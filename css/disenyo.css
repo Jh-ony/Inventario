@@ -505,85 +505,6 @@ body::-webkit-scrollbar-thumb
 
 
 
-/*Boton del modal*/
-/*.boton-modal{
-   
-    background-color: #fff;
-    width: 50%;
-}*/
-
-.boton-modal label {
-    padding: 10px 20px;
-    background-color: #5488e3;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 300ms ease;
-
-}
-
-.boton-modal label:hover{
-    background-color: blue;
-}
-
-#btn-modal {
-    display: none;
-}
-
-.contenedor-modal{
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0; left: 0;
-    background-color: rgba(227, 234, 246, 0.667);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-
-}
-
-#btn-modal:checked ~ .contenedor-modal{
-    display: flex;   
-}
-.contenido-modal{
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 4px;
-}
-
-.contenido-modal .btn-cerrar{
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.contenido-modal .btn-cerrar label{
-    padding: 7px 10px;
-    background-color: #5488e3;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 300ms ease;
-}
-
-.contenido-modal .btn-cerrar label:hover{
-    background-color: blue;
-}
-
-.cerrar-modal{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0; left: 0;
-    z-index: -1;
-}
-
-
-
 /* --Exclusivo de PC-- */
 
 .botones{
@@ -649,23 +570,110 @@ body::-webkit-scrollbar-thumb
     margin-top: -10px;
     height: 560px;
     width: 135%;
+
+
     
 }
+.tabla-exterior{
 
-.tabla-pc th{
-    background-color:#292929;
-    color: white;
-    border-radius: 5px;
-    font-size:medium;
-    padding: 2px 3px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+    grid-area: exterior;
+}
+
+.tabla-pc{
+    width: 100%;
+    text-align: center;
+    border-spacing: 4px;
 }
 
 .tabla-pc td{
     background-color:#292929;
     color: white;
-    border-radius: 5px;
-    font-size:medium;
+    border-radius: 1vmax;
+    font-size:small;
     padding: 2px 3px;
-    font-family: 'Franklin Gothic Demi Bold';
+    font-family:sans-serif;
+
+}
+
+.second-tabla-pc{
+    width: 100%;
+    text-align: center;
+    border-spacing: 4px;
+}
+.second-tabla-pc td{
+background-color: white;
+color: black;
+border-radius: 1vmax;
+font-size:small;
+padding: 2px 3px;
+font-family: sans-serif;
+font-weight: bold;
+
+}
+
+
+.tablas-detalle{
+    grid-area: detalle;
+    background-color: whitesmoke;
+    border-radius: 5px;
+
+}
+
+.grid-detalles{
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+    gap: 5%;
+    margin: 10px;
+}
+.secc-opciones{
+    grid-area: opciones;
+}
+.interior-pc
+    {
+    display: grid;
+    gap: 2%;
+    grid-template:
+    "opciones opciones" 3%
+    "exterior detalle"
+    / 20% 78%
+
+    }
+
+
+
+.tablas-detalle th{
+    border-radius: 1vmax;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffbd38;
+    font-family: sans-serif;
+    font-size: small;
+    padding: 5px;
+    height: 10px;
+}
+
+.tablas-detalle td{
+    border-radius: 1vmax;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: small;
+    padding: 5px;
+
+}
+
+.button-pc{
+    text-decoration: none;
+    background-color: whitesmoke;
+    border-style: solid;
+    border-width: 2px;
+    color: black;
+
+}
+
+.opciones-derecha{
+    text-align: right;
 }

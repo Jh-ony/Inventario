@@ -192,18 +192,9 @@ class CtrlPCs extends Controlador {
     pubLic function detalles(){
         $id = $_GET['id'];
         $obj = new PCs($id);
-        // $data = $obj->getRegistro();
-        // $home=$this->mostrar('PCs/detallesPC.php',$datos,true);
-        // $datos = [
-        //     'contenido'=>$home
-        // ];
-        // $this->mostrar('plantilla/home.php',$datos);
 
-
-
-        // $obj = new PCs();
         $data = $obj->getDetalles();
-        # var_dump($data);exit;
+
         $datos = [
             'titulo'=>'PCs',
             'data'=>$data['data']
@@ -214,6 +205,7 @@ class CtrlPCs extends Controlador {
         ];
         $this->mostrar('plantilla/home.php',$datos);
     }
+
 }
 
 ?>

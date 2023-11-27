@@ -89,6 +89,8 @@ class PCs extends Modelo {
         $this->setTabla($this->_vista);
         return $this->getById($this->id);
     }
+    
+
     public function guardar(){
         $data=[
             'id'=>"'$this->id'",
