@@ -46,16 +46,16 @@ $titulo = ($esNuevo==1)?'Nueva Asignacion':'Editando Asignacion';
             Servidor Publico
             </div>
             <br>
-            <select class="form" name="idServidorPublico" id="">
-                <option value="">*Seleccione Servidor</option>
+            <select class="form" name="ServidorPublico" id="">
+                <option value="">*Seleccione Servidor Publico</option>
                 <?php
-                if (is_array($servidoresPublicos))
-                foreach ($servidoresPublicos as $sp) {
+                if (is_array($personas))
+                foreach ($personas as $p) {
                     
-                    $select=($idServidorPublico==$sp['id'])?'selected':'';
+                    $select=($idPersonas==$p['id'])?'selected':'';
                 ?>
-                <option <?=$select?> value="<?=$sp['id']?>">
-                    <?=$sp['id']?>
+                <option <?=$select?> value="<?=$p['id']?>">
+                    <?=$p['nombres'] ,'&nbsp', $p['apellidos']?>
                 </option>
                 <?php } ?>
             </select>
@@ -86,7 +86,7 @@ $titulo = ($esNuevo==1)?'Nueva Asignacion':'Editando Asignacion';
             Jefe Inmediato
             </div>
             <br>
-            <select class="form" name="idPersonas" id="">
+            <select class="form" name="JefeInmediato" id="">
                 <option value="">*Seleccione Jefe Inmediato</option>
                 <?php
                 if (is_array($personas))

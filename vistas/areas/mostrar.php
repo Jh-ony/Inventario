@@ -77,7 +77,6 @@
 
             </table>
 
-            <script src="./vistas/areas/busqueda.js"></script>
             </div>
         </div> 
 

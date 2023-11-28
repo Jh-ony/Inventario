@@ -17,7 +17,7 @@ class CtrlPCs extends Controlador {
             'titulo'=>'PCs',
             'data'=>$data['data']
         ];
-        $home=$this->mostrar('PCs/opcion.php',$datos,true);
+        $home=$this->mostrar('PCs/mostrar.php',$datos,true);
         $datos = [
             'contenido'=>$home
         ];
@@ -82,7 +82,40 @@ class CtrlPCs extends Controlador {
         $this->mostrar('plantilla/home.php',$datos);
     }
 
-    
+    public function cambEst(){
+        $id = $_GET['id'];
+        $obj = new PCs ($id);
+        $data = $obj->getRegistro();
+
+
+        $objTiProcesadores = new TiposProcesadores;
+        $dataTiProcesadores = $objTiProcesadores->mostrar();
+
+        $objFacForma = new FactorForma;
+        $dataFacForma = $objFacForma->mostrar();
+
+        $objSO = new SistemasOperativos;
+        $dataSO = $objSO->mostrar();
+
+        $objEstados = new Estados;
+        $dataEstados = $objEstados->mostrar();
+        
+        $datos = [
+            'obj'=>$data['data'][0],
+            'tiposProcesadores'=>$dataTiProcesadores['data'],
+            'factorForma'=>$dataFacForma['data'],
+            'SO'=>$dataSO['data'],
+            'estados'=>$dataEstados['data']
+            
+        ];
+        $home=$this->mostrar('PCs/cambEstado.php',$datos,true);
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+
+    }
+
     public function editar(){
         $id = $_GET['id'];
         $obj = new PCs ($id);
@@ -136,6 +169,7 @@ class CtrlPCs extends Controlador {
         $DNS2=$_POST['DNS2'];
         $numeroSerie=$_POST['numeroSerie'];
         $foto=$_POST['foto'];
+        $motivo=$_POST['motivo'];
 
 
         $esNuevo=$_POST['esNuevo'];
@@ -159,7 +193,8 @@ class CtrlPCs extends Controlador {
         $DNS1,
         $DNS2,
         $numeroSerie,
-        $foto);
+        $foto,
+        $motivo);
 
         switch ($esNuevo) {
             case '0': # Editar
@@ -174,6 +209,37 @@ class CtrlPCs extends Controlador {
         $this->index();
 
     }
+
+    public function cambEstado(){
+        $id=$_POST['id'];
+        
+        $idEstado=$_POST['idEstado'];
+        // $motivo=$_POST['motivo'];
+
+
+        $esNuevo=$_POST['esNuevo'];
+
+        $obj = new PCs(
+        $id,
+        
+        $idEstado,
+        // $motivo
+        );
+
+        switch ($esNuevo) {
+            case '0': # Editar
+                $respuesta = $obj->actualizar();
+                break;
+            
+            default:    #Nuevo
+                $respuesta = $obj->guardar();
+                break;
+        }
+
+        $this->index();
+
+    }
+
     public function eliminar(){
         $id = $_GET['id'];
         $obj = new PCs($id);

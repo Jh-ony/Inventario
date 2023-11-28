@@ -20,7 +20,16 @@ foreach ($data as $d) {
                 <td>ThinkStation 360</td>    
                 </tr>
             </table>
+                <?php
 
+                        $estado='';
+                        if ($d['Estado_Equipo']=="En almacen") {
+                            $estado = "rojo";
+                        }
+                        else {
+                            $estado = "blanco";
+                        }
+                ?>
             <table class="second-tabla-pc">
                 <!-- <tr>
                     <td>Area</td>
@@ -30,10 +39,44 @@ foreach ($data as $d) {
                     <td>Asignado</td>
                     <td>Jhony</td> -->
                 </tr>
-                <td colspan="2">Estado : <?=$d['Estado_Equipo']?></td>
+                <td colspan="2" id=<?=$estado?>>Estado : <?=$d['Estado_Equipo']?></td>
 
             </table>
 
+
+            <div class="motivo">
+
+            <?php
+                if ($d['motivo']!="") {
+                   ?> <table>
+                    <tr>
+                        <td>Motivo de la baja</td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <?=$d['motivo']?>
+                        </td>
+                    </tr>
+                </table>
+                <?php
+                }
+                else {
+                    ?>
+                    <!-- <table>
+                    <tr>
+                        <td>Motivo de la baja</td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <?=$d['motivo']?>
+                        </td>
+                    </tr>
+                </table> -->
+                <?php
+                }
+            ?>
+
+            </div>
         </div>
 
 
@@ -135,13 +178,13 @@ foreach ($data as $d) {
         </div>
     </div>
 
-            <?=$d['id']?>
+            <!-- <?=$d['id']?>
 
-            <!-- <?=$d['nombrePC']?> -->
+             <?=$d['nombrePC']?>
 
             <?=$d['usuarioPC']?>
 
-            <?=$d['clavePC']?>
+            <?=$d['clavePC']?> -->
 
             <!-- <?=$d['Nombre_Procesadores']?> -->
 
@@ -171,11 +214,11 @@ foreach ($data as $d) {
 
             <!-- <?=$d['numeroSerie']?> -->
 
-            <?=$d['foto']?>
+            <!-- <?=$d['foto']?> -->
 
          <div class="secc-opciones"> 
            
-                <a href="?ctrl=CtrlPCs">Retornar</a>
+                <a href="?ctrl=CtrlPCs" class="button"><i class="fa-solid fa-angles-left" style="color: #253e6a;"></i>Retornar</a>
             <div class="opciones-derecha">
                 <a href="?ctrl=CtrlPCs&accion=editar&id=<?=$d['id']?>" class="button-pc">Modificar</a>
 

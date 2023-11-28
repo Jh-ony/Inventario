@@ -125,7 +125,7 @@ background-color: rgba(0, 0, 0, 0.5);
 
 }
 
-.tabla th
+th
 {
 
    background-color: #73d5ff;
@@ -143,7 +143,7 @@ background-color: rgba(0, 0, 0, 0.5);
 
 }
 
-.tabla td{
+td{
     font-size: medium;
     border-spacing: 12px;
     background-color: white;
@@ -323,7 +323,7 @@ body::-webkit-scrollbar-thumb
 {
 
 
-    height: 645px;
+    height: 630px;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -388,7 +388,7 @@ body::-webkit-scrollbar-thumb
     
     grid-template: 
     
-    "logo header" 100px
+    "logo header" 95px
     "otro otro" 100px
     "main main" auto
     "sidebar sidebar" auto
@@ -431,8 +431,8 @@ body::-webkit-scrollbar-thumb
         grid-template-rows: 100px auto 200;*/
         grid-template:
         "logo otro header" 100px
-        "sidebar main main" auto
-        "sidebar footer footer" 70px /
+        "sidebar main main" 580px
+        "sidebar footer footer" 66px /
         300px  400px auto;
 
     }
@@ -486,8 +486,9 @@ body::-webkit-scrollbar-thumb
 .caja-form
 {
    
-
-   
+    height: 550px;
+    overflow: hidden;
+    overflow-y: scroll;
     text-align: center;
    
   
@@ -676,4 +677,40 @@ font-weight: bold;
 
 .opciones-derecha{
     text-align: right;
+}
+
+#rojo{
+    background-color: rgb(255, 110, 110);
+}
+
+#detalles{
+    background-color: #12c441;
+    padding: 8px 8px;
+    border-radius: 2vmax;
+}
+
+#detalles:hover{
+    background-color: #32d85e;
+}
+
+#camb-estado{
+    background-color: #f0e143;
+    padding: 8px 10px;
+    border-radius: 2vmax;
+    margin-right: 10px;
+    
+}
+
+.tabla-pc1{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+.tabla-pc1 td{
+    height: 28px;
+}
+
+.oculto{
+    display: none;
 }

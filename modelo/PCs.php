@@ -20,6 +20,7 @@ class PCs extends Modelo {
     private $DNS2;
     private $numeroSerie;
     private $foto;
+    private $motivo;
 
     private $_tabla='PCs';
     private $_vista='v_pcs';
@@ -44,7 +45,8 @@ class PCs extends Modelo {
         $DNS1=null,
         $DNS2=null,
         $numeroSerie=null,
-        $foto=null
+        $foto=null,
+        $motivo=null
         ){
         $this->id = $id;
         $this->idTipoProcesador=$idTipoProcesador;
@@ -56,7 +58,7 @@ class PCs extends Modelo {
         $this->detallesFactorForma=$detallesFactorForma;
         $this->observaciones=$observaciones;
         $this->direccionIP=$direccionIP;
-        $this->mascaraReed=$mascaraRed;
+        $this->mascaraRed=$mascaraRed;
         $this->PuertaEnlace=$PuertaEnlace;
         $this->DNS1=$DNS1;
         $this->DNS2=$DNS2;
@@ -65,12 +67,13 @@ class PCs extends Modelo {
         $this->usuarioPC=$usuarioPC;
         $this->clavePC=$clavePC;
         $this->foto=$foto;
+        $this->motivo=$motivo;
       
         parent::__construct($this->_tabla);
     }
 
     public function mostrarUso(){
-        $this->setTabla($this->_vistaUso);
+        $this->setTabla($this->_vista);
         return $this->getAll();
     }
     public function mostrarAlmcn(){
@@ -78,6 +81,7 @@ class PCs extends Modelo {
         return $this->getAll();
     }
     public function mostrar(){
+        $this->setTabla($this->_vista);
         return $this->getAll();
     }
     public function getRegistro(){
@@ -111,7 +115,8 @@ class PCs extends Modelo {
             'DNS1'=>"'$this->DNS1'",
             'DNS2'=>"'$this->DNS2'",
             'numeroSerie'=>"'$this->numeroSerie'",
-            'foto'=>"'$this->foto'"
+            'foto'=>"'$this->foto'",
+            'motivo'=>"'$this->motivo'"
         ];
         return $this->insert($data);
     }
@@ -136,7 +141,8 @@ class PCs extends Modelo {
             'DNS1'=>"'$this->DNS1'",
             'DNS2'=>"'$this->DNS2'",
             'numeroSerie'=>"'$this->numeroSerie'",
-            'foto'=>"'$this->foto'"
+            'foto'=>"'$this->foto'",
+            'motivo'=>"'$this->motivo'"
         ];
         $wh = 'id='.$this->id;
         return $this->update($wh, $data);
