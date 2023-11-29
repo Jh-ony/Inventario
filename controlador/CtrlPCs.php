@@ -7,6 +7,7 @@ require_once './modelo/FactorForma.php';
 require_once './modelo/SistemasOperativos.php';
 require_once './modelo/TiposProcesadores.php';
 require_once './modelo/Equipos.php';
+require_once './modelo/Mantenimiento.php';
 
 class CtrlPCs extends Controlador {
     public function index(){
@@ -68,11 +69,15 @@ class CtrlPCs extends Controlador {
         $objEstados = new Estados;
         $dataEstados = $objEstados->mostrar();
 
+        $objMnt = new Mantenimiento();
+        $dataMnt = $objMnt->mostrar();
+
         $datos = [
             'tiposProcesadores'=>$dataTiProcesadores['data'],
             'factorForma'=>$dataFacForma['data'],
             'SO'=>$dataSO['data'],
-            'estados'=>$dataEstados['data']
+            'estados'=>$dataEstados['data'],
+            'manten'=>$dataMnt['data']
         ]; 
 
         $home=$this->mostrar('PCs/formulario.php',$datos,true);
@@ -99,13 +104,17 @@ class CtrlPCs extends Controlador {
 
         $objEstados = new Estados;
         $dataEstados = $objEstados->mostrar();
+
+        $objMnt = new Mantenimiento;
+        $dataMnt = $objMnt->mostrar();
         
         $datos = [
             'obj'=>$data['data'][0],
             'tiposProcesadores'=>$dataTiProcesadores['data'],
             'factorForma'=>$dataFacForma['data'],
             'SO'=>$dataSO['data'],
-            'estados'=>$dataEstados['data']
+            'estados'=>$dataEstados['data'],
+            'manten'=>$dataMnt['data']
             
         ];
         $home=$this->mostrar('PCs/cambEstado.php',$datos,true);
@@ -133,13 +142,17 @@ class CtrlPCs extends Controlador {
 
         $objEstados = new Estados;
         $dataEstados = $objEstados->mostrar();
+
+        $objMnt = new Mantenimiento;
+        $dataMnt = $objMnt->mostrar();
         
         $datos = [
             'obj'=>$data['data'][0],
             'tiposProcesadores'=>$dataTiProcesadores['data'],
             'factorForma'=>$dataFacForma['data'],
             'SO'=>$dataSO['data'],
-            'estados'=>$dataEstados['data']
+            'estados'=>$dataEstados['data'],
+            'manten'=>$dataMnt['data']
             
         ];
         $home=$this->mostrar('PCs/formulario.php',$datos,true);
@@ -170,6 +183,7 @@ class CtrlPCs extends Controlador {
         $numeroSerie=$_POST['numeroSerie'];
         $foto=$_POST['foto'];
         $motivo=$_POST['motivo'];
+        $idMantenimiento=$_POST['idMantenimiento'];
 
 
         $esNuevo=$_POST['esNuevo'];
@@ -194,7 +208,8 @@ class CtrlPCs extends Controlador {
         $DNS2,
         $numeroSerie,
         $foto,
-        $motivo);
+        $motivo,
+        $idMantenimiento);
 
         switch ($esNuevo) {
             case '0': # Editar
@@ -223,7 +238,7 @@ class CtrlPCs extends Controlador {
         $id,
         
         $idEstado,
-        // $motivo
+        $motivo
         );
 
         switch ($esNuevo) {
@@ -272,8 +287,51 @@ class CtrlPCs extends Controlador {
         $this->mostrar('plantilla/home.php',$datos);
     }
 
+    public function fPatrim(){
+        $valor =$_POST['patrim'];
+        $columna = 'codigoPatrimonial';
+        
+        $obj = new PCs;
+        $resultado= $obj -> filPatrim($columna, $valor);
+
+        $home = $this->mostrar('PCs/mostrar.php',$resultado,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+    }
+
+    public function fSO(){
+        $valor =$_POST['prmtrSO'];
+        $columna = 'Nombre_Operativos';
+        
+        $obj = new PCs;
+        $resultado= $obj -> filSO($columna, $valor);
+
+        $home = $this->mostrar('PCs/mostrar.php',$resultado,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+    }
+
+    public function fEstado(){
+        $valor =$_POST['prmtrEstado'];
+        $columna = 'Estado_Equipo';
+        
+        $obj = new PCs;
+        $resultado= $obj -> filEstado($columna, $valor);
+
+        $home = $this->mostrar('PCs/mostrar.php',$resultado,true);
+
+        $datos = [
+            'contenido'=>$home
+        ];
+        $this->mostrar('plantilla/home.php',$datos);
+    }
 }
 
 ?>
 
-<?php

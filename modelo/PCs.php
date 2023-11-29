@@ -17,10 +17,11 @@ class PCs extends Modelo {
     private $mascaraRed;
     private $PuertaEnlace;
     private $DNS1;
-    private $DNS2;
+    private $DNS2;      
     private $numeroSerie;
     private $foto;
     private $motivo;
+    private $idMantenimiento;
 
     private $_tabla='PCs';
     private $_vista='v_pcs';
@@ -46,7 +47,8 @@ class PCs extends Modelo {
         $DNS2=null,
         $numeroSerie=null,
         $foto=null,
-        $motivo=null
+        $motivo=null,
+        $idMantenimiento=null
         ){
         $this->id = $id;
         $this->idTipoProcesador=$idTipoProcesador;
@@ -68,6 +70,7 @@ class PCs extends Modelo {
         $this->clavePC=$clavePC;
         $this->foto=$foto;
         $this->motivo=$motivo;
+        $this->idMantenimiento=$idMantenimiento;
       
         parent::__construct($this->_tabla);
     }
@@ -116,7 +119,8 @@ class PCs extends Modelo {
             'DNS2'=>"'$this->DNS2'",
             'numeroSerie'=>"'$this->numeroSerie'",
             'foto'=>"'$this->foto'",
-            'motivo'=>"'$this->motivo'"
+            'motivo'=>"'$this->motivo'",
+            'idMantenimiento'=>"'$this->idMantenimiento'"
         ];
         return $this->insert($data);
     }
@@ -142,7 +146,8 @@ class PCs extends Modelo {
             'DNS2'=>"'$this->DNS2'",
             'numeroSerie'=>"'$this->numeroSerie'",
             'foto'=>"'$this->foto'",
-            'motivo'=>"'$this->motivo'"
+            'motivo'=>"'$this->motivo'",
+            'idMantenimiento'=>"'$this->idMantenimiento'"
         ];
         $wh = 'id='.$this->id;
         return $this->update($wh, $data);
@@ -151,4 +156,27 @@ class PCs extends Modelo {
         return $this->deleteById($this->id);
     }
 
+    public function filPatrim(){
+        $valor = $_POST['patrim'];
+        $columna = 'codigoPatrimonial';
+
+        $this->setTabla($this->_vista);
+        return $this->getBy($columna, $valor);
+    }
+
+    public function filSO(){
+        $valor = $_POST['prmtrSO'];
+        $columna = 'Nombre_Operativos';
+
+        $this->setTabla($this->_vista);
+        return $this->getBy($columna, $valor);
+    }
+
+    public function filEstado(){
+        $valor = $_POST['prmtrEstado'];
+        $columna = 'Estado_Equipo';
+
+        $this->setTabla($this->_vista);
+        return $this->getBy($columna, $valor);
+    }
 }

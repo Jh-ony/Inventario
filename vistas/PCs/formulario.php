@@ -18,6 +18,7 @@ $nombresPC = isset($obj['nombrePC'])?$obj['nombrePC']:'';
 $usuarioPC = isset($obj['usuarioPC'])?$obj['usuarioPC']:'';
 $clavePC = isset($obj['clavePC'])?$obj['clavePC']:'';
 $foto = isset($obj['foto'])?$obj['foto']:'';
+$idMantenimiento = isset($obj['idMantenimiento'])?$obj['idMantenimiento']:'';
 
 
 # var_dump($obj);exit;
@@ -43,7 +44,7 @@ $titulo = ($esNuevo==1)?'Nueva PCs':'Editar PCs';
             ID
             </div>
             <br>
-            <input class="form" type="text" name="id" value="<?=$id?>">
+            <input class="form" type="text" name="id" value="<?=$id?>" placeholder="Asegurese que la ID sea de un equipo disponible">
             <input class="form" type="hidden" name="esNuevo" value="<?=$esNuevo?>">
             
             <br>
@@ -223,14 +224,32 @@ $titulo = ($esNuevo==1)?'Nueva PCs':'Editar PCs';
             <input class="form" type="text" name="foto" value="<?=$foto?>">
             <br>
             <br>
+            <div class="oculto">
             <div class="atributo">
             Motivo de la baja
             </div>
             <br>
         <input type="text" class="form" name="motivo" placeholder="Si se cambia a almacen, explique el motivo">
+        </div>
         <br>
         <br>
-        <br/>
+        <div class="atributo">
+            Mantenimiento:
+        </div>
+        <br>
+        <select class="form" name="idMantenimiento">
+                        <?php
+                        if (is_array($manten))
+                        foreach ($manten as $mnt) {
+                            $selected = ($mnt['id']==$idMantenimiento)?'selected':'';
+                        ?>
+                        <option value="<?=$mnt['id']?>" <?=$selected?>><?=$mnt['caso']?></option>
+                        <?php
+                        }
+                        ?>
+                </select>
+                <br>
+        <br>
         <input class="form" type="submit" class="form" id="guardar" value="Guardar">
             <br>
             <br>

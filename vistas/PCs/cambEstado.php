@@ -19,6 +19,7 @@ $usuarioPC = isset($obj['usuarioPC'])?$obj['usuarioPC']:'';
 $clavePC = isset($obj['clavePC'])?$obj['clavePC']:'';
 $foto = isset($obj['foto'])?$obj['foto']:'';
 $motivo = isset($obj['motivo'])?$obj['motivo']:'';
+$idMantenimiento = isset($obj['idMantenimiento'])?$obj['idMantenimiento']:'';
 
 
 # var_dump($obj);exit;
@@ -175,6 +176,25 @@ $titulo = ($esNuevo==1)?'Nueva PCs':'Editar PCs';
         <input type="text" class="form" name="motivo" placeholder="Si se cambia a almacen, explique el motivo">
         <br>
         <br>
+
+        <div class="atributo">
+            Mantenimiento:
+        </div>
+        <br>
+        <select class="form" name="idMantenimiento">
+                        <?php
+                        if (is_array($manten))
+                        foreach ($manten as $mnt) {
+                            $selected = ($mnt['id']==$idMantenimiento)?'selected':'';
+                        ?>
+                        <option value="<?=$mnt['id']?>" <?=$selected?>><?=$mnt['caso']?></option>
+                        <?php
+                        }
+                        ?>
+                </select>
+<br>
+<br>
+
             <input class="form" type="submit" value="Guardar" id="guardar">
 
 

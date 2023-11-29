@@ -700,6 +700,9 @@ font-weight: bold;
     margin-right: 10px;
     
 }
+#camb-estado:hover{
+background-color: #fbfb5d;
+}
 
 .tabla-pc1{
     width: 100%;
@@ -713,4 +716,85 @@ font-weight: bold;
 
 .oculto{
     display: none;
+}
+
+.motivo{
+    width: 100%;
+}
+
+.patrimonio
+{
+   display: none;
+
+
+   width: 1fr;
+
+}
+
+#cPatrim{
+    display: none;
+}
+
+#cPatrim:checked ~ .patrimonio{
+    display: flex;
+    
+}
+
+.cont-busqueda{
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fit, minmax(min(10rem, 15rem), 1fr));
+    gap: 4%;
+    
+    width: 132%;
+
+}
+
+.foro{
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fit, minmax(min(300px, 500%), 1fr));
+   margin-left: -68%;
+}
+
+.prSO
+{
+
+    display: none;
+    width: 90%;
+
+
+}
+
+#bSO{
+    display: none;
+}
+
+#bSO:checked ~ .prSO{
+    display: flex;
+    
+}
+
+.prEstado{
+    display: none;
+}
+
+#chEstado:checked ~ .prEstado{
+    display: flex;
+}
+
+#chEstado{
+    display: none;
+
+}
+
+.btn-filtro{
+    background: lightblue;
+    border-radius: 1vmin;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.pointer{
+    cursor: pointer;
 }

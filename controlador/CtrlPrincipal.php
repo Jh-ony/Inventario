@@ -47,6 +47,7 @@ class CtrlPrincipal extends Controlador {
             'CtrlDesplazamientos'=>'Desplazamiento',
             'CtrlPerifericos'=>'Perifericos',
             'CtrlPCs'=>'PCs',
+            'CtrlMantenimiento'=>'mantenimiento',
             'CtrlServidoresPublicos'=>'Servidores Publicos',
 
         ];

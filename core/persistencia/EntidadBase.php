@@ -39,7 +39,7 @@ class EntidadBase
      
     public function getBy($columna,$valor){
         $this->_sql->setTabla($this->_tabla);
-        $this->_sql->addWhere("`$columna`= '$valor'");
+        $this->_sql->addWhere("`$columna`like '%$valor%'");
         return $this->_bd->ejecutar($this->_sql);
     }
      

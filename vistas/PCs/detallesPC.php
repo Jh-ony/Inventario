@@ -48,7 +48,7 @@ foreach ($data as $d) {
 
             <?php
                 if ($d['motivo']!="") {
-                   ?> <table>
+                   ?> <table class="motivo">
                     <tr>
                         <td>Motivo de la baja</td>
                     </tr>
